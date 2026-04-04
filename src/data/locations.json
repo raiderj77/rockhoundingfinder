@@ -1,122 +1,702 @@
 [
   {
-    "id": 1,
-    "name": "Sapphire Gallery",
-    "slug": "sapphire-gallery",
-    "state": "Montana",
-    "stateSlug": "montana",
-    "city": "Helena",
-    "lat": 46.5891,
-    "lng": -112.0000,
-    "description": "Historic sapphire mining area near Helena with stunning blue sapphires. Open to public rockhounders during designated seasons. Professional-grade specimens and collector-quality gems available.",
-    "amenities": ["Public access", "Fee: Free", "Minerals: Sapphires", "BLM land", "No permit required", "Parking available"]
-  },
-  {
-    "id": 2,
-    "name": "Gem Valley Mine",
-    "slug": "gem-valley-mine",
-    "state": "Idaho",
-    "stateSlug": "idaho",
-    "city": "Estes",
-    "lat": 45.8245,
-    "lng": -114.8765,
-    "description": "Premier garnet mining location in central Idaho's gem valley. Fee-dig operation with excellent finds of deep red garnets. Equipment rental available.",
-    "amenities": ["Fee-dig site", "Fee: $25/day", "Minerals: Garnets", "Facilities: Restrooms", "Tools available for rent", "Group discounts"]
-  },
-  {
-    "id": 3,
-    "name": "Sunstone Point",
-    "slug": "sunstone-point",
-    "state": "Oregon",
-    "stateSlug": "oregon",
-    "city": "Plush",
-    "lat": 42.7012,
-    "lng": -120.4505,
-    "description": "Famous sunstone collecting area in south-central Oregon. Beautiful peachy-orange sunstones are abundant. Permits required but easily obtained from local BLM office.",
-    "amenities": ["Public access", "Fee: Free", "Minerals: Sunstones", "BLM land", "Permit required ($5)", "Water available"]
-  },
-  {
-    "id": 4,
-    "name": "Jade Cove",
-    "slug": "jade-cove",
+    "name": "Post Pile",
+    "slug": "post-pile",
     "state": "California",
     "stateSlug": "california",
-    "city": "Monterey",
-    "lat": 36.2643,
-    "lng": -121.8344,
-    "description": "Coastal jade collecting site on California's Big Sur. World-class nephrite jade specimens found along beaches. Tide-dependent access.",
-    "amenities": ["Beach access", "Fee: Free", "Minerals: Jade, Nephrite", "Tide pools", "Scenic views", "Day use only"]
+    "city": "",
+    "lat": 39.015032,
+    "lng": -120.31549,
+    "description": "Post Pile is a outcrop in California. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Rock outcrop",
+      "Rock collecting"
+    ]
   },
   {
-    "id": 5,
-    "name": "Sleeping Beauty Mine",
-    "slug": "sleeping-beauty-mine",
-    "state": "Arizona",
-    "stateSlug": "arizona",
-    "city": "Globe",
-    "lat": 33.3916,
-    "lng": -110.7930,
-    "description": "Iconic turquoise mining area producing the famous Sleeping Beauty turquoise. Tour and collect on designated property. Educational tours available.",
-    "amenities": ["Fee property", "Fee: $30/person", "Minerals: Turquoise", "Tours offered", "Gift shop", "Restaurant nearby"]
+    "name": "Chicken Rock",
+    "slug": "chicken-rock",
+    "state": "California",
+    "stateSlug": "california",
+    "city": "",
+    "lat": 35.993447,
+    "lng": -117.157991,
+    "description": "Chicken Rock is a outcrop in California. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Rock outcrop",
+      "Rock collecting"
+    ]
   },
   {
-    "id": 6,
-    "name": "Agate Basin",
-    "slug": "agate-basin",
-    "state": "Wyoming",
-    "stateSlug": "wyoming",
-    "city": "Rawlins",
-    "lat": 41.7924,
-    "lng": -107.2339,
-    "description": "Large agate fields with colorful banded specimens. Public lands with abundant surface deposits. Great for beginners and families.",
-    "amenities": ["Public access", "Fee: Free", "Minerals: Agates", "BLM land", "No permit required", "Dispersed camping"]
+    "name": "Kimberly Number 4 Mine",
+    "slug": "kimberly-number-4-mine",
+    "state": "Alabama",
+    "stateSlug": "alabama",
+    "city": "",
+    "lat": 33.857046,
+    "lng": -86.823607,
+    "description": "Kimberly Number 4 Mine is a mine in Alabama. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
   },
   {
-    "id": 7,
-    "name": "Virgin Valley Opal",
-    "slug": "virgin-valley-opal",
-    "state": "Nevada",
-    "stateSlug": "nevada",
-    "city": "McDermitt",
-    "lat": 41.7925,
-    "lng": -118.6738,
-    "description": "World-famous opal deposits in northern Nevada. Private claims available to collect. Beautiful fire opals and common opals found.",
-    "amenities": ["Fee property", "Fee: $10/day", "Minerals: Opals", "Camping available", "Tools rental", "Primitive facilities"]
+    "name": "Mary Lee Number 2 Mine",
+    "slug": "mary-lee-number-2-mine",
+    "state": "Alabama",
+    "stateSlug": "alabama",
+    "city": "",
+    "lat": 33.686219,
+    "lng": -87.215279,
+    "description": "Mary Lee Number 2 Mine is a mine in Alabama. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
   },
   {
-    "id": 8,
-    "name": "Petrified Forest Park",
-    "slug": "petrified-forest-park",
-    "state": "Texas",
-    "stateSlug": "texas",
-    "city": "Groveton",
-    "lat": 30.8268,
-    "lng": -95.2097,
-    "description": "Petrified wood collecting area in East Texas. Colorful specimens of various sizes. Public park with designated rockhounding areas.",
-    "amenities": ["Public park", "Fee: $5 entry", "Minerals: Petrified Wood", "Facilities available", "Picnic areas", "Educational programs"]
+    "name": "Dave Cobb Mine",
+    "slug": "dave-cobb-mine",
+    "state": "Alabama",
+    "stateSlug": "alabama",
+    "city": "",
+    "lat": 33.676498,
+    "lng": -87.291669,
+    "description": "Dave Cobb Mine is a mine in Alabama. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
   },
   {
-    "id": 9,
-    "name": "Petoskey Stone Beach",
-    "slug": "petoskey-stone-beach",
-    "state": "Michigan",
-    "stateSlug": "michigan",
-    "city": "Petoskey",
-    "lat": 45.3557,
-    "lng": -84.9744,
-    "description": "Fossil coral deposits on Lake Michigan beaches. Petoskey stones are Michigan's state stone. Easy access and excellent specimens.",
-    "amenities": ["Public beach", "Fee: Free", "Minerals: Petoskey Stones", "Beach parking", "Visitor center", "Summer crowds"]
+    "name": "High Level Mine",
+    "slug": "high-level-mine",
+    "state": "Alabama",
+    "stateSlug": "alabama",
+    "city": "",
+    "lat": 33.673719,
+    "lng": -87.205556,
+    "description": "High Level Mine is a mine in Alabama. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
   },
   {
-    "id": 10,
-    "name": "Hiddenite Emerald Mine",
-    "slug": "hiddenite-emerald-mine",
-    "state": "North Carolina",
-    "stateSlug": "north-carolina",
-    "city": "Hiddenite",
-    "lat": 35.7245,
-    "lng": -81.7456,
-    "description": "Historic emerald mining area in western North Carolina. Fee-dig mine with professional equipment available. Beautiful green specimens.",
-    "amenities": ["Fee-dig site", "Fee: $20/hour", "Minerals: Emeralds, Hiddenite", "Equipment provided", "Shop on-site", "Group rates"]
+    "name": "Dalton Mine",
+    "slug": "dalton-mine",
+    "state": "Alabama",
+    "stateSlug": "alabama",
+    "city": "",
+    "lat": 33.669553,
+    "lng": -87.22639,
+    "description": "Dalton Mine is a mine in Alabama. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "Cobb Mine",
+    "slug": "cobb-mine",
+    "state": "Alabama",
+    "stateSlug": "alabama",
+    "city": "",
+    "lat": 33.676497,
+    "lng": -87.215279,
+    "description": "Cobb Mine is a mine in Alabama. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "Busby Mine",
+    "slug": "busby-mine",
+    "state": "Alabama",
+    "stateSlug": "alabama",
+    "city": "",
+    "lat": 33.688998,
+    "lng": -87.291669,
+    "description": "Busby Mine is a mine in Alabama. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "Marietta Mine",
+    "slug": "marietta-mine",
+    "state": "Alabama",
+    "stateSlug": "alabama",
+    "city": "",
+    "lat": 33.697332,
+    "lng": -87.388893,
+    "description": "Marietta Mine is a mine in Alabama. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "Gaslight Mine",
+    "slug": "gaslight-mine",
+    "state": "Alabama",
+    "stateSlug": "alabama",
+    "city": "",
+    "lat": 33.726499,
+    "lng": -87.388894,
+    "description": "Gaslight Mine is a mine in Alabama. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "Hillard Drift Mine",
+    "slug": "hillard-drift-mine",
+    "state": "Alabama",
+    "stateSlug": "alabama",
+    "city": "",
+    "lat": 33.82233,
+    "lng": -87.365285,
+    "description": "Hillard Drift Mine is a mine in Alabama. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "Lloyd-Watson Mine",
+    "slug": "lloyd-watson-mine",
+    "state": "Alabama",
+    "stateSlug": "alabama",
+    "city": "",
+    "lat": 33.802882,
+    "lng": -87.033333,
+    "description": "Lloyd-Watson Mine is a mine in Alabama. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "Empire Town Creek Mine",
+    "slug": "empire-town-creek-mine",
+    "state": "Alabama",
+    "stateSlug": "alabama",
+    "city": "",
+    "lat": 33.798716,
+    "lng": -87.033333,
+    "description": "Empire Town Creek Mine is a mine in Alabama. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "Ledbetter Mine",
+    "slug": "ledbetter-mine",
+    "state": "Alabama",
+    "stateSlug": "alabama",
+    "city": "",
+    "lat": 33.776494,
+    "lng": -87.037499,
+    "description": "Ledbetter Mine is a mine in Alabama. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "Pugh Mine",
+    "slug": "pugh-mine",
+    "state": "Alabama",
+    "stateSlug": "alabama",
+    "city": "",
+    "lat": 33.793716,
+    "lng": -87.038889,
+    "description": "Pugh Mine is a mine in Alabama. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "North River Number 1 Mine",
+    "slug": "north-river-number-1-mine",
+    "state": "Alabama",
+    "stateSlug": "alabama",
+    "city": "",
+    "lat": 33.614001,
+    "lng": -87.608343,
+    "description": "North River Number 1 Mine is a mine in Alabama. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "Durant Mines",
+    "slug": "durant-mines",
+    "state": "Alabama",
+    "stateSlug": "alabama",
+    "city": "",
+    "lat": 33.664826,
+    "lng": -86.90305,
+    "description": "Durant Mines is a mine in Alabama. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "Lindbergh Number 6 Mine",
+    "slug": "lindbergh-number-6-mine",
+    "state": "Alabama",
+    "stateSlug": "alabama",
+    "city": "",
+    "lat": 33.61955,
+    "lng": -86.986107,
+    "description": "Lindbergh Number 6 Mine is a mine in Alabama. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "Blossburg East Mine",
+    "slug": "blossburg-east-mine",
+    "state": "Alabama",
+    "stateSlug": "alabama",
+    "city": "",
+    "lat": 33.58205,
+    "lng": -86.91666,
+    "description": "Blossburg East Mine is a mine in Alabama. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "Edgewater Shaft Mine",
+    "slug": "edgewater-shaft-mine",
+    "state": "Alabama",
+    "stateSlug": "alabama",
+    "city": "",
+    "lat": 33.511218,
+    "lng": -86.937493,
+    "description": "Edgewater Shaft Mine is a mine in Alabama. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "Bayview Mine",
+    "slug": "bayview-mine",
+    "state": "Alabama",
+    "stateSlug": "alabama",
+    "city": "",
+    "lat": 33.554273,
+    "lng": -86.969439,
+    "description": "Bayview Mine is a mine in Alabama. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "Bessie Mine",
+    "slug": "bessie-mine",
+    "state": "Alabama",
+    "stateSlug": "alabama",
+    "city": "",
+    "lat": 33.641773,
+    "lng": -87.024997,
+    "description": "Bessie Mine is a mine in Alabama. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "Overton Mine",
+    "slug": "overton-mine",
+    "state": "Alabama",
+    "stateSlug": "alabama",
+    "city": "",
+    "lat": 33.488994,
+    "lng": -86.679153,
+    "description": "Overton Mine is a mine in Alabama. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "Overton Number 1 Slope Mine",
+    "slug": "overton-number-1-slope-mine",
+    "state": "Alabama",
+    "stateSlug": "alabama",
+    "city": "",
+    "lat": 33.487606,
+    "lng": -86.690265,
+    "description": "Overton Number 1 Slope Mine is a mine in Alabama. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "Big Ten Mine",
+    "slug": "big-ten-mine",
+    "state": "Alabama",
+    "stateSlug": "alabama",
+    "city": "",
+    "lat": 33.619548,
+    "lng": -86.812492,
+    "description": "Big Ten Mine is a mine in Alabama. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "Banner Shaft Mine",
+    "slug": "banner-shaft-mine",
+    "state": "Alabama",
+    "stateSlug": "alabama",
+    "city": "",
+    "lat": 33.659826,
+    "lng": -86.881938,
+    "description": "Banner Shaft Mine is a mine in Alabama. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "Worthington Ore Mines",
+    "slug": "worthington-ore-mines",
+    "state": "Alabama",
+    "stateSlug": "alabama",
+    "city": "",
+    "lat": 33.794545,
+    "lng": -86.638323,
+    "description": "Worthington Ore Mines is a mine in Alabama. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "Prospect Mines",
+    "slug": "prospect-mines",
+    "state": "Alabama",
+    "stateSlug": "alabama",
+    "city": "",
+    "lat": 33.920663,
+    "lng": -87.476956,
+    "description": "Prospect Mines is a mine in Alabama. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "Rock Slope Mine",
+    "slug": "rock-slope-mine",
+    "state": "Alabama",
+    "stateSlug": "alabama",
+    "city": "",
+    "lat": 33.880664,
+    "lng": -87.487511,
+    "description": "Rock Slope Mine is a mine in Alabama. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "Chickasaw Mine",
+    "slug": "chickasaw-mine",
+    "state": "Alabama",
+    "stateSlug": "alabama",
+    "city": "",
+    "lat": 33.876497,
+    "lng": -87.487511,
+    "description": "Chickasaw Mine is a mine in Alabama. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "Polk Southard Mines",
+    "slug": "polk-southard-mines",
+    "state": "Arkansas",
+    "stateSlug": "arkansas",
+    "city": "",
+    "lat": 35.895352,
+    "lng": -91.736254,
+    "description": "Polk Southard Mines is a mine_shaft in Arkansas. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "Excelsor Mine",
+    "slug": "excelsor-mine",
+    "state": "Arkansas",
+    "stateSlug": "arkansas",
+    "city": "",
+    "lat": 36.04063,
+    "lng": -92.824057,
+    "description": "Excelsor Mine is a mine_shaft in Arkansas. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "Champlain Prospect",
+    "slug": "champlain-prospect",
+    "state": "Arkansas",
+    "stateSlug": "arkansas",
+    "city": "",
+    "lat": 35.807854,
+    "lng": -91.655417,
+    "description": "Champlain Prospect is a mine_shaft in Arkansas. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "C C Johnson Prospect",
+    "slug": "c-c-johnson-prospect",
+    "state": "Arkansas",
+    "stateSlug": "arkansas",
+    "city": "",
+    "lat": 35.898129,
+    "lng": -91.700975,
+    "description": "C C Johnson Prospect is a mine_shaft in Arkansas. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "Cripple Hill Prospect",
+    "slug": "cripple-hill-prospect",
+    "state": "Arkansas",
+    "stateSlug": "arkansas",
+    "city": "",
+    "lat": 35.900907,
+    "lng": -91.736254,
+    "description": "Cripple Hill Prospect is a mine_shaft in Arkansas. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "Blue Ridge Mine",
+    "slug": "blue-ridge-mine",
+    "state": "Arkansas",
+    "stateSlug": "arkansas",
+    "city": "",
+    "lat": 35.892018,
+    "lng": -91.723754,
+    "description": "Blue Ridge Mine is a mine_shaft in Arkansas. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "Jackson Prospect",
+    "slug": "jackson-prospect",
+    "state": "Arkansas",
+    "stateSlug": "arkansas",
+    "city": "",
+    "lat": 35.937573,
+    "lng": -91.571249,
+    "description": "Jackson Prospect is a mine_shaft in Arkansas. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "J W Greenfield Prospect",
+    "slug": "j-w-greenfield-prospect",
+    "state": "Arkansas",
+    "stateSlug": "arkansas",
+    "city": "",
+    "lat": 35.806465,
+    "lng": -91.655973,
+    "description": "J W Greenfield Prospect is a mine_shaft in Arkansas. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "Helms Prospect",
+    "slug": "helms-prospect",
+    "state": "Arkansas",
+    "stateSlug": "arkansas",
+    "city": "",
+    "lat": 35.90924,
+    "lng": -91.74181,
+    "description": "Helms Prospect is a mine_shaft in Arkansas. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "Grub Cut Mine",
+    "slug": "grub-cut-mine",
+    "state": "Arkansas",
+    "stateSlug": "arkansas",
+    "city": "",
+    "lat": 35.891741,
+    "lng": -91.743476,
+    "description": "Grub Cut Mine is a mine_shaft in Arkansas. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "Friday Prospect",
+    "slug": "friday-prospect",
+    "state": "Arkansas",
+    "stateSlug": "arkansas",
+    "city": "",
+    "lat": 35.905074,
+    "lng": -91.723198,
+    "description": "Friday Prospect is a mine_shaft in Arkansas. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "Reed Mine",
+    "slug": "reed-mine",
+    "state": "Arkansas",
+    "stateSlug": "arkansas",
+    "city": "",
+    "lat": 35.897852,
+    "lng": -91.696253,
+    "description": "Reed Mine is a mine_shaft in Arkansas. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "Rogers Mine",
+    "slug": "rogers-mine",
+    "state": "Arkansas",
+    "stateSlug": "arkansas",
+    "city": "",
+    "lat": 35.892018,
+    "lng": -91.74181,
+    "description": "Rogers Mine is a mine_shaft in Arkansas. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "Rowe Field Mine",
+    "slug": "rowe-field-mine",
+    "state": "Arkansas",
+    "stateSlug": "arkansas",
+    "city": "",
+    "lat": 35.890352,
+    "lng": -91.723753,
+    "description": "Rowe Field Mine is a mine_shaft in Arkansas. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "Pritchett Prospect",
+    "slug": "pritchett-prospect",
+    "state": "Arkansas",
+    "stateSlug": "arkansas",
+    "city": "",
+    "lat": 35.898129,
+    "lng": -91.703753,
+    "description": "Pritchett Prospect is a mine_shaft in Arkansas. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "Mount Etna Mine",
+    "slug": "mount-etna-mine",
+    "state": "Arkansas",
+    "stateSlug": "arkansas",
+    "city": "",
+    "lat": 35.917296,
+    "lng": -91.756255,
+    "description": "Mount Etna Mine is a mine_shaft in Arkansas. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "Klondike Mine",
+    "slug": "klondike-mine",
+    "state": "Arkansas",
+    "stateSlug": "arkansas",
+    "city": "",
+    "lat": 35.887018,
+    "lng": -91.747365,
+    "description": "Klondike Mine is a mine_shaft in Arkansas. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "Lassiter Mine",
+    "slug": "lassiter-mine",
+    "state": "Arkansas",
+    "stateSlug": "arkansas",
+    "city": "",
+    "lat": 35.901185,
+    "lng": -91.74181,
+    "description": "Lassiter Mine is a mine_shaft in Arkansas. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
+  },
+  {
+    "name": "Maxfield Prospect",
+    "slug": "maxfield-prospect",
+    "state": "Arkansas",
+    "stateSlug": "arkansas",
+    "city": "",
+    "lat": 35.903407,
+    "lng": -91.72792,
+    "description": "Maxfield Prospect is a mine_shaft in Arkansas. A popular site for rockhounds and mineral enthusiasts.",
+    "amenities": [
+      "Historic mine",
+      "Rock collecting"
+    ]
   }
 ]
