@@ -1,378 +1,184 @@
-import locations from "@/data/locations.json";
+/* eslint-disable @next/next/no-img-element */
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import locations from '@/data/locations.json';
 
-export const dynamic = "force-static";
+export const dynamic = 'force-static';
+
+export const metadata: Metadata = {
+  title: 'Rockhounding Finder — Discover Gem & Mineral Sites Across America',
+  description: 'Find the best rockhounding sites near you. Gems, crystals, minerals, and fossils across all 50 states with GPS coordinates and collecting tips.',
+};
+
+const ALL_STATES = [
+  'Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware',
+  'Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky',
+  'Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi',
+  'Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico',
+  'New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania',
+  'Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont',
+  'Virginia','Washington','West Virginia','Wisconsin','Wyoming',
+];
+
+const IMG_KEYWORDS = ['rocks+minerals','gem+hunting','crystal+mining','quartz+crystal','gemstone','rockhounding+site'];
 
 export default function Home() {
-  const brandColor = "#3d2b1f";
-  const accentColor = "#c47b00";
   const featured = locations.slice(0, 6);
+  const statesWithData = Array.from(new Set(locations.map((l) => l.state))).length;
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            name: "Rockhounding Finder",
-            url: "https://rockhoundingfinder.com",
-            logo: "https://rockhoundingfinder.com/logo.png",
-            description:
-              "Directory of rockhounding sites, gem mining locations, and mineral collecting areas across the USA.",
-          }),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            url: "https://rockhoundingfinder.com",
-            potentialAction: {
-              "@type": "SearchAction",
-              target: {
-                "@type": "EntryPoint",
-                urlTemplate:
-                  "https://rockhoundingfinder.com/{search_term_string}",
-              },
-              query_input: "required name=search_term_string",
-            },
-          }),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: [
-              {
-                "@type": "Question",
-                name: "What is rockhounding?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Rockhounding is the hobby of searching for and collecting rocks, minerals, gems, and crystals from natural or designated sites. It combines geology, outdoor exploration, and collecting.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Do I need a permit to go rockhounding?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "It depends on the location. Public lands often don't require permits, while private mines may charge fees. Always check with the site before visiting.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "What equipment do I need to start rockhounding?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Basic equipment includes a rock hammer, chisel, bucket, gloves, and eye protection. A loupe for examining specimens is helpful but optional for beginners.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "What are the most common gems found rockhounding?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Popular finds include agates, garnets, sapphires, opals, turquoise, amethyst, and jade. Different regions produce different gemstones.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Is rockhounding allowed on public lands?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Many public lands administered by BLM and Forest Service allow rockhounding. Always verify regulations and obtain any required permits.",
-                },
-              },
-            ],
-          }),
-        }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context':'https://schema.org','@type':'WebSite',url:'https://rockhoundingfinder.com',
+        name:'Rockhounding Finder',
+        potentialAction:{'@type':'SearchAction',target:{'@type':'EntryPoint',urlTemplate:'https://rockhoundingfinder.com/search?q={search_term_string}'},'query-input':'required name=search_term_string'},
+      }) }} />
 
-      <section
-        style={{
-          backgroundImage: "linear-gradient(135deg, #3d2b1f 0%, #5d4b3f 100%)",
-          color: "white",
-          padding: "6rem 2rem",
-          textAlign: "center",
-        }}
-      >
-        <div style={{ maxWidth: "800px", margin: "0 auto" }}>
-          <h1 style={{ fontSize: "3.5rem", margin: "0 0 1rem 0" }}>
-            Find Rockhounding Sites Near You
-          </h1>
-          <p style={{ fontSize: "1.3rem", margin: 0, lineHeight: "1.6" }}>
-            Discover gem mining locations, mineral collecting sites, and
-            rockhounding areas across the United States
+      {/* Hero */}
+      <section style={{ position: 'relative', background: 'linear-gradient(160deg, var(--earth) 0%, #1a0c08 50%, #0d1a1a 100%)', overflow: 'hidden', padding: '7rem 1.5rem 8rem' }}>
+        <div aria-hidden style={{ position: 'absolute', inset: 0, backgroundImage: 'repeating-linear-gradient(160deg, transparent 0px, transparent 60px, rgba(196,82,26,0.03) 60px, rgba(196,82,26,0.03) 62px, transparent 62px, transparent 130px, rgba(26,122,122,0.04) 130px, rgba(26,122,122,0.04) 132px)', pointerEvents: 'none' }} />
+        <div className="container" style={{ textAlign: 'center', position: 'relative', zIndex: 1 }}>
+          <p className="anim-fade-up" style={{ display: 'inline-block', color: 'var(--rust-lt)', fontWeight: 700, fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.16em', marginBottom: '1rem', fontFamily: 'var(--font-body)', background: 'rgba(196,82,26,0.12)', padding: '0.4rem 1.2rem', borderRadius: '50px', border: '1px solid rgba(196,82,26,0.28)' }}>
+            🪨 Gem & Mineral Site Directory
           </p>
+          <h1 className="anim-fade-up anim-delay-1" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.2rem, 5.5vw, 4rem)', color: 'var(--white)', fontWeight: 700, marginBottom: '1rem', lineHeight: 1.05, letterSpacing: '0.04em' }}>
+            FIND ROCKHOUNDING<br /><span style={{ color: 'var(--rust-lt)' }}>SITES</span> ACROSS AMERICA
+          </h1>
+          <p className="anim-fade-up anim-delay-2" style={{ fontSize: '1.05rem', color: '#c0a090', marginBottom: '2.75rem', maxWidth: '500px', margin: '0 auto 2.75rem', fontFamily: 'var(--font-body)', lineHeight: 1.65 }}>
+            Gems, crystals, agates, fossils &amp; minerals — {locations.length}+ collecting sites with GPS coordinates.
+          </p>
+          <form method="GET" action="/search" className="anim-fade-up anim-delay-3">
+            <div className="search-wrap">
+              <input type="text" name="q" placeholder="Search by state, city, or mineral type…" className="search-input" />
+              <button type="submit" className="search-btn">Find Sites</button>
+            </div>
+          </form>
         </div>
+        <svg aria-hidden viewBox="0 0 1440 55" xmlns="http://www.w3.org/2000/svg" style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', display: 'block' }} preserveAspectRatio="none">
+          <path d="M0,28 C360,55 1080,0 1440,28 L1440,55 L0,55 Z" fill="var(--ivory)" />
+        </svg>
       </section>
 
-      <section
-        style={{
-          maxWidth: "1200px",
-          margin: "3rem auto",
-          padding: "0 2rem",
-        }}
-      >
-        <h2 style={{ color: brandColor, textAlign: "center", fontSize: "2rem" }}>
-          Featured Rockhounding Sites
-        </h2>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-            gap: "2rem",
-            marginTop: "2rem",
-          }}
-        >
-          {featured.map((location) => (
-            <a
-              key={location.slug}
-              href={`/${location.stateSlug}/${location.slug}`}
-              style={{
-                padding: "1.5rem",
-                border: `2px solid ${accentColor}`,
-                borderRadius: "8px",
-                textDecoration: "none",
-                color: "inherit",
-                transition: "all 0.3s",
-              }}
-            >
-              <h3 style={{ color: accentColor, margin: "0 0 0.5rem 0" }}>
-                {location.name}
-              </h3>
-              <p
-                style={{
-                  color: "#666",
-                  fontSize: "0.9rem",
-                  margin: "0 0 1rem 0",
-                }}
-              >
-                {location.city}, {location.state}
-              </p>
-              <p style={{ margin: 0, lineHeight: "1.5" }}>
-                {location.description.substring(0, 120)}...
-              </p>
-              <div style={{ marginTop: "1rem" }}>
-                {location.amenities.slice(0, 3).map((amenity, idx) => (
-                  <span
-                    key={idx}
-                    style={{
-                      display: "inline-block",
-                      backgroundColor: "#f5f5f5",
-                      color: brandColor,
-                      padding: "0.3rem 0.8rem",
-                      borderRadius: "20px",
-                      fontSize: "0.85rem",
-                      marginRight: "0.5rem",
-                      marginBottom: "0.5rem",
-                    }}
-                  >
-                    {amenity}
-                  </span>
-                ))}
-              </div>
-            </a>
+      {/* Stats */}
+      <section style={{ background: 'var(--white)', borderBottom: '1px solid rgba(196,82,26,0.1)' }}>
+        <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)' }}>
+          {[
+            { n:`${locations.length}+`, l:'Collecting Sites' },
+            { n:`${statesWithData}`, l:'States Covered' },
+            { n:'Gems', l:'Minerals & Fossils' },
+            { n:'GPS', l:'Coordinates' },
+          ].map(({n,l}) => (
+            <div key={l} className="stat-item">
+              <div className="stat-number">{n}</div>
+              <div className="stat-label">{l}</div>
+            </div>
           ))}
         </div>
       </section>
 
-      <section
-        style={{
-          maxWidth: "1200px",
-          margin: "4rem auto",
-          padding: "0 2rem",
-        }}
-      >
-        <h2
-          style={{
-            color: brandColor,
-            fontSize: "2rem",
-            marginBottom: "1.5rem",
-          }}
-        >
-          What is Rockhounding?
-        </h2>
-        <p style={{ lineHeight: "1.8", marginBottom: "1rem" }}>
-          Rockhounding is the exciting hobby of searching for and collecting
-          rocks, minerals, gemstones, and crystals from nature. Whether you're a
-          seasoned collector or just getting started, rockhounding offers
-          adventure, discovery, and the chance to connect with the earth's
-          natural geology. From sparkling quartz crystals to vibrant gemstones,
-          each site offers unique treasures waiting to be found.
-        </p>
-        <p style={{ lineHeight: "1.8", marginBottom: "1rem" }}>
-          This hobby combines outdoor exploration with the thrill of discovery.
-          Rockhounders travel to special sites where conditions are favorable
-          for finding valuable or beautiful specimens. Whether it's following a
-          river to look for agates or visiting a fee-dig mine for sapphires,
-          rockhounding creates lifelong memories and spectacular collections.
-        </p>
-
-        <h2
-          style={{
-            color: brandColor,
-            fontSize: "2rem",
-            marginBottom: "1.5rem",
-            marginTop: "2rem",
-          }}
-        >
-          Types of Rockhounding Sites
-        </h2>
-        <p style={{ lineHeight: "1.8", marginBottom: "1rem" }}>
-          Rockhounding sites come in several varieties. Public lands managed by
-          the Bureau of Land Management (BLM) and U.S. Forest Service often
-          allow free rockhounding in designated areas. These sites provide access
-          to natural geology and are perfect for finding agate, jasper, and other
-          common specimens. State parks sometimes offer rockhounding areas where
-          visitors can collect within specified zones. Fee-dig mines, operated
-          privately, charge visitors to search curated gravel or soil where gems
-          and minerals have been concentrated. These commercial operations are
-          excellent for beginners and families, offering a higher likelihood of
-          success.
-        </p>
-
-        <h2
-          style={{
-            color: brandColor,
-            fontSize: "2rem",
-            marginBottom: "1.5rem",
-            marginTop: "2rem",
-          }}
-        >
-          Popular Gemstones and Minerals by Region
-        </h2>
-        <p style={{ lineHeight: "1.8", marginBottom: "1rem" }}>
-          Different regions of the United States produce distinct gemstones and
-          minerals. Montana is famous for sapphires, while Idaho produces
-          exceptional garnets. Oregon's high desert is known for beautiful
-          sunstones, and California offers jade along coastal areas. Arizona is
-          legendary for turquoise, particularly the distinctive Sleeping Beauty
-          turquoise. Wyoming fields are rich with colorful agates, Nevada
-          produces world-class opals, and Texas has abundant petrified wood.
-          Michigan's beaches yield Petoskey stones (fossilized coral), and North
-          Carolina is one of the few places in the US where emeralds can be
-          found.
-        </p>
-
-        <h2
-          style={{
-            color: brandColor,
-            fontSize: "2rem",
-            marginBottom: "1.5rem",
-            marginTop: "2rem",
-          }}
-        >
-          Essential Rockhounding Equipment
-        </h2>
-        <p style={{ lineHeight: "1.8", marginBottom: "1rem" }}>
-          Starting with the right tools makes rockhounding more enjoyable and
-          productive. A rock hammer is essential for breaking open specimens and
-          removing rocks from exposed surfaces. A chisel works alongside the
-          hammer for precise breaks. Wear sturdy gloves to protect your hands
-          from sharp edges and a comfortable hat and sunscreen for outdoor
-          protection. Safety glasses or eye protection prevent rock chips from
-          hitting your eyes. A bucket collects your finds, and a loupe magnifier
-          helps examine specimens for quality and detail. Many sites offer tool
-          rental for beginners.
-        </p>
-
-        <h2
-          style={{
-            color: brandColor,
-            fontSize: "2rem",
-            marginBottom: "1.5rem",
-            marginTop: "2rem",
-          }}
-        >
-          Leave No Trace and Regulations
-        </h2>
-        <p style={{ lineHeight: "1.8", marginBottom: "1rem" }}>
-          Responsible rockhounding protects natural areas for future generations.
-          Follow Leave No Trace principles: take only what you need, fill any
-          holes you dig, and remove any trash you see. Respect posted boundaries
-          and protected areas. Many sites prohibit collecting from certain
-          formations or restrict collection to surface finds. Regulations vary by
-          location, so always contact the managing agency or site operator before
-          visiting. Some areas require permits, while others are completely free.
-          Understanding local rules ensures you can rockhound legally and
-          ethically.
-        </p>
-
-        <h2
-          style={{
-            color: brandColor,
-            fontSize: "2rem",
-            marginBottom: "1.5rem",
-            marginTop: "2rem",
-          }}
-        >
-          Frequently Asked Questions
-        </h2>
-
-        <div style={{ marginBottom: "2rem" }}>
-          <h3 style={{ color: accentColor, fontSize: "1.3rem" }}>
-            Do I need experience to start rockhounding?
-          </h3>
-          <p style={{ lineHeight: "1.8" }}>
-            Not at all. Rockhounding welcomes beginners. Fee-dig mines are
-            perfect for starting out, with staff available to help identify finds
-            and explain techniques. Online guides and gemstone identification
-            books help you learn as you go.
-          </p>
+      {/* Featured */}
+      <section style={{ padding: '5rem 1.5rem 4rem' }}>
+        <div className="container">
+          <p className="section-label">🪨 Top Sites</p>
+          <h2 className="section-title">Featured Rockhounding Sites</h2>
+          <p className="section-sub" style={{ marginBottom: '3rem' }}>Top-rated gem and mineral collecting locations from coast to coast.</p>
+          <div className="grid-3">
+            {featured.map((loc, i) => (
+              <Link key={loc.slug} href={`/${loc.stateSlug}/${loc.slug}`} style={{ textDecoration: 'none' }}>
+                <article className="card">
+                  <img src={`https://source.unsplash.com/800x500/?${IMG_KEYWORDS[i%IMG_KEYWORDS.length]}&sig=${i+1}`} alt={loc.name} className="card-img" loading="lazy" width={800} height={500} />
+                  <div className="card-body">
+                    <div className="card-meta"><span>📍</span><span>{loc.city ? `${loc.city}, ` : ''}{loc.state}</span></div>
+                    <h3 className="card-title">{loc.name}</h3>
+                    <p style={{ fontSize: '0.875rem', color: '#667', lineHeight: 1.65, flex: 1, marginBottom: '1rem' }}>{loc.description.slice(0,110)}…</p>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
+                      {loc.amenities.slice(0,3).map((a) => <span key={a} className="chip">{a}</span>)}
+                    </div>
+                  </div>
+                </article>
+              </Link>
+            ))}
+          </div>
         </div>
+      </section>
 
-        <div style={{ marginBottom: "2rem" }}>
-          <h3 style={{ color: accentColor, fontSize: "1.3rem" }}>
-            What's the best time of year to go rockhounding?
-          </h3>
-          <p style={{ lineHeight: "1.8" }}>
-            Generally, spring through fall offers the best weather for outdoor
-            rockhounding. However, some locations have seasonal closures or
-            specific open seasons. Check ahead with the site you plan to visit.
-          </p>
+      {/* How it works */}
+      <section style={{ background: 'linear-gradient(135deg, var(--earth) 0%, #1a0c08 100%)', padding: '5rem 1.5rem' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+            <p style={{ color: 'var(--rust-lt)', fontWeight: 700, fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.14em', marginBottom: '0.75rem', fontFamily: 'var(--font-body)' }}>How It Works</p>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '2.2rem', color: 'var(--white)', letterSpacing: '0.04em' }}>FIND YOUR COLLECTING SITE</h2>
+          </div>
+          <div className="grid-3">
+            {[
+              { icon:'🗺️', title:'BROWSE BY STATE', desc:'Pick your state to explore every documented rockhounding site — with mineral types, access info, and GPS.' },
+              { icon:'💎', title:'CHECK THE SITE', desc:'Review the minerals you can find, what tools to bring, site rules, and any permit requirements.' },
+              { icon:'🪨', title:'GO COLLECTING', desc:"Get directions and head out. Bring a rock hammer, gloves, and a bag — America's geology awaits." },
+            ].map(({icon,title,desc}) => (
+              <div key={title} style={{ textAlign: 'center', padding: '2rem 1.5rem', background: 'rgba(255,255,255,0.04)', borderRadius: 'var(--radius)', border: '1px solid rgba(196,82,26,0.2)' }}>
+                <div className="step-icon">{icon}</div>
+                <h3 style={{ fontFamily: 'var(--font-display)', color: 'var(--rust-lt)', fontSize: '1.4rem', marginBottom: '0.75rem', letterSpacing: '0.04em' }}>{title}</h3>
+                <p style={{ color: '#c0a090', lineHeight: 1.7, fontSize: '0.95rem', fontFamily: 'var(--font-body)' }}>{desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
+      </section>
 
-        <div style={{ marginBottom: "2rem" }}>
-          <h3 style={{ color: accentColor, fontSize: "1.3rem" }}>
-            Can families with kids go rockhounding?
-          </h3>
-          <p style={{ lineHeight: "1.8" }}>
-            Absolutely. Rockhounding is family-friendly, especially at fee-dig
-            sites. Kids love the outdoor adventure and excitement of discovery.
-            Always supervise children and ensure they wear appropriate safety
-            gear.
-          </p>
+      {/* Content */}
+      <section style={{ padding: '5rem 1.5rem' }}>
+        <div className="container" style={{ maxWidth: '860px' }}>
+          <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', color: 'var(--earth)', marginBottom: '1.25rem', letterSpacing: '0.04em' }}>THE ART OF ROCKHOUNDING</h2>
+          <p style={{ lineHeight: 1.85, marginBottom: '1.25rem' }}>Rockhounding is the hobby of collecting rocks, minerals, gems, and fossils in their natural environment. From the agate beds of the Pacific Northwest to the quartz crystals of Arkansas and the petrified wood of Arizona, the United States offers some of the world's most spectacular collecting opportunities.</p>
+          <p style={{ lineHeight: 1.85, marginBottom: '1.25rem' }}>What makes rockhounding special is the combination of outdoor adventure and scientific discovery. Every site tells a geological story spanning millions of years. Finding a perfect amethyst crystal or a trilobite fossil connects you to deep time in a way few hobbies can match.</p>
+          <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.6rem', color: 'var(--earth)', marginTop: '2rem', marginBottom: '0.75rem', letterSpacing: '0.04em' }}>BEFORE YOU GO</h3>
+          <p style={{ lineHeight: 1.85 }}>Always check land ownership and rules before collecting. Collecting is permitted on most BLM lands for personal use. National Parks prohibit removal of any natural materials. Some sites require permits or charge fees. The Rockhound Code of Ethics calls for filling holes, taking only what you need, and leaving the site as you found it.</p>
         </div>
+      </section>
 
-        <div style={{ marginBottom: "2rem" }}>
-          <h3 style={{ color: accentColor, fontSize: "1.3rem" }}>
-            How much can I expect to find?
-          </h3>
-          <p style={{ lineHeight: "1.8" }}>
-            Results vary by location and luck. Fee-dig mines guarantee finds,
-            while public lands are less predictable. Experienced rockhounders
-            know where and how to look. Even a modest collection of beautiful
-            specimens makes for great memories.
-          </p>
+      {/* FAQ */}
+      <section style={{ background: 'var(--cream)', borderTop: '1px solid rgba(196,82,26,0.08)', padding: '5rem 1.5rem' }}>
+        <div className="container" style={{ maxWidth: '800px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <p className="section-label">FAQ</p>
+            <h2 className="section-title">Common Questions</h2>
+          </div>
+          {[
+            { q:'Is rockhounding legal?', a:'It depends on the land. Collecting is generally permitted on BLM (Bureau of Land Management) land for personal use. It is prohibited in National Parks, and varies on state parks and private land. Always check before collecting.' },
+            { q:'What tools do I need for rockhounding?', a:'Basics include a rock hammer, cold chisels, safety glasses, gloves, a backpack, newspaper or cloth for wrapping specimens, and a field guide to local minerals. GPS is also helpful for marking good sites.' },
+            { q:'How do I identify rocks and minerals?', a:'Key properties for identification include hardness (Mohs scale), color, streak, luster, cleavage/fracture, and crystal form. A good field guide to minerals, combined with practice, will quickly develop your identification skills.' },
+            { q:'Can I sell what I find?', a:'You can sell specimens collected on your own property or with landowner permission. Material collected on BLM land for personal use cannot be commercially sold. Federal lands have strict rules about commercial collecting.' },
+            { q:'What are the most common finds?', a:'Quartz (in many varieties including amethyst, citrine, and agate) is found across most states. Other common finds include jasper, obsidian, calcite, feldspar, and fossils like shells and plant material.' },
+          ].map(({q,a}) => (
+            <details key={q} className="faq-item">
+              <summary>{q}</summary>
+              <div className="faq-answer">{a}</div>
+            </details>
+          ))}
         </div>
+      </section>
 
-        <div style={{ marginBottom: "2rem" }}>
-          <h3 style={{ color: accentColor, fontSize: "1.3rem" }}>
-            Are there dangerous elements to rockhounding?
-          </h3>
-          <p style={{ lineHeight: "1.8" }}>
-            Rockhounding has minimal risks when done safely. Wear safety glasses,
-            gloves, and appropriate footwear. Be aware of wildlife, weather
-            changes, and unstable terrain. Always tell someone where you're going
-            and bring plenty of water.
-          </p>
+      {/* Browse States */}
+      <section style={{ padding: '5rem 1.5rem' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+            <p className="section-label">All 50 States</p>
+            <h2 className="section-title">Browse Sites by State</h2>
+          </div>
+          <div className="grid-states">
+            {ALL_STATES.map((s) => (
+              <Link key={s} href={`/${s.toLowerCase().replace(/\s+/g,'-')}`} className="state-link">{s}</Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section style={{ background: 'var(--earth)', padding: '4rem 1.5rem', textAlign: 'center' }}>
+        <div className="container" style={{ maxWidth: '600px' }}>
+          <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '2.2rem', color: 'var(--white)', marginBottom: '1rem', letterSpacing: '0.04em' }}>START YOUR HUNT TODAY</h2>
+          <p style={{ color: '#8a6a5a', marginBottom: '2rem', lineHeight: 1.7 }}>{locations.length}+ rockhounding sites across {statesWithData} states. Find your next gem.</p>
+          <Link href="/browse-states" className="btn btn-rust" style={{ padding: '0.9rem 2.25rem' }}>Explore Sites →</Link>
         </div>
       </section>
     </>

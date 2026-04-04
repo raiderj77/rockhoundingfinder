@@ -1,325 +1,86 @@
-import type { Metadata } from "next";
-import Script from "next/script";
+import type { Metadata } from 'next';
+import Script from 'next/script';
+import { Oswald, Source_Sans_3 } from 'next/font/google';
+import './globals.css';
+
+const oswald = Oswald({ subsets: ['latin'], variable: '--font-display', display: 'swap', weight: ['400','500','600','700'] });
+const sourceSans = Source_Sans_3({ subsets: ['latin'], variable: '--font-body', display: 'swap', weight: ['400','600','700'] });
 
 export const metadata: Metadata = {
-  title:
-    "Rockhounding Sites Directory | Find Public Rockhounding Locations Near You",
-  description:
-    "Discover rockhounding sites, gem mining locations, and mineral collecting areas across the USA. Find public lands, fee-dig mines, and state parks with sapphires, opals, garnets, and more.",
-  keywords: [
-    "rockhounding",
-    "gem mining",
-    "mineral collecting",
-    "gemstones",
-    "public lands",
-    "fee-dig mines",
-    "lapidary",
-    "crystals",
-    "geodes",
-  ],
-  metadataBase: new URL("https://rockhoundingfinder.com"),
-  alternates: { canonical: "https://rockhoundingfinder.com" },
-  verification: { google: "QXqAI47-3tV4BMAg_aGRiubKJmMhGAjUFdkqhCLgl2I" },
-  openGraph: {
-    title:
-      "Rockhounding Sites Directory | Find Public Rockhounding Locations",
-    description:
-      "Discover rockhounding sites and gem mining locations across the USA.",
-    type: "website",
-    url: "https://rockhoundingfinder.com",
-    images: [
-      {
-        url: "https://rockhoundingfinder.com/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Rockhounding Finder",
-      },
-    ],
-  },
+  title: { template: '%s | Rockhounding Finder', default: 'Rockhounding Finder — Find Rock & Mineral Sites Across America' },
+  description: 'Discover the best rockhounding sites across the United States. Find gems, minerals, fossils, and crystals with GPS coordinates and site details.',
+  keywords: 'rockhounding, gem hunting, mineral collecting, fossil sites, crystal hunting, rockhounding near me',
+  metadataBase: new URL('https://rockhoundingfinder.com'),
+  alternates: { canonical: 'https://rockhoundingfinder.com' },
+  robots: 'index, follow, max-snippet:-1',
+  verification: { google: 'QXqAI47-3tV4BMAg_aGRiubKJmMhGAjUFdkqhCLgl2I' },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const brandColor = "#3d2b1f";
-  const accentColor = "#c47b00";
+const toolSites = [
+  { name: 'Fiber Tools', href: 'https://fibertools.app' }, { name: 'Mind Check Tools', href: 'https://mindchecktools.com' },
+  { name: 'Flip My Case', href: 'https://flipmycase.com' }, { name: 'Creator Revenue Calculator', href: 'https://creatorrevenuecalculator.com' },
+  { name: 'Contract Extract', href: 'https://contractextract.com' }, { name: 'Medical Bill Reader', href: 'https://medicalbillreader.com' },
+  { name: 'Tax Break Tools', href: 'https://taxbreaktools.com' }, { name: '524 Tracker', href: 'https://524tracker.com' },
+];
+const directorySites = [
+  { name: 'Public Boat Ramps', href: 'https://publicboatramps.com' }, { name: 'Find Swim Spots', href: 'https://findswimspots.com' },
+  { name: 'Craft Distillery Finder', href: 'https://craftdistilleryfinder.com' }, { name: 'Drive-In Tonight', href: 'https://driveintonight.com' },
+  { name: 'All Skate Parks', href: 'https://allskateparks.com' }, { name: 'Nearby Escape Rooms', href: 'https://nearbyescaperooms.com' },
+  { name: 'All Skating Rinks', href: 'https://allskatingrinks.com' }, { name: 'Soak USA', href: 'https://soakusa.net' },
+];
 
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${oswald.variable} ${sourceSans.variable}`}>
       <head>
         <meta name="msvalidate.01" content="C4C9B6256BDEDED169E4DE01CA953390" />
-        <meta
-          name="google-site-verification"
-          content="rockhoundingfinder-verification"
-        />
-        <meta name="theme-color" content={brandColor} />
-        <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta
-          name="apple-mobile-web-app-status-bar-style"
-          content="black-translucent"
-        />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <Script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7171402107622932" strategy="afterInteractive" />
       </head>
-      <body style={{ margin: 0, padding: 0, fontFamily: "system-ui, -apple-system, sans-serif", color: "#333" }}>
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7171402107622932"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
-        <header
-          style={{
-            position: "sticky",
-            top: 0,
-            backgroundColor: brandColor,
-            color: "white",
-            padding: "1rem 2rem",
-            zIndex: 100,
-            boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
-          }}
-        >
-          <nav
-            style={{
-              maxWidth: "1200px",
-              margin: "0 auto",
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
-            <div style={{ fontSize: "1.5rem", fontWeight: "bold" }}>
-              <a
-                href="/"
-                style={{
-                  color: accentColor,
-                  textDecoration: "none",
-                  transition: "opacity 0.2s",
-                }}
-              >
-                Rockhounding Finder
-              </a>
-            </div>
-            <div style={{ display: "flex", gap: "2rem", alignItems: "center" }}>
-              <a
-                href="/"
-                style={{
-                  color: "white",
-                  textDecoration: "none",
-                  transition: "color 0.2s",
-                }}
-              >
-                Home
-              </a>
-              <a
-                href="/about"
-                style={{
-                  color: "white",
-                  textDecoration: "none",
-                  transition: "color 0.2s",
-                }}
-              >
-                About
-              </a>
-              <a
-                href="/contact"
-                style={{
-                  color: "white",
-                  textDecoration: "none",
-                  transition: "color 0.2s",
-                }}
-              >
-                Contact
-              </a>
-            </div>
-          </nav>
+      <body>
+        <header style={{ background: 'var(--earth)', borderBottom: '3px solid var(--rust)', position: 'sticky', top: 0, zIndex: 1000, boxShadow: '0 2px 20px rgba(44,24,16,0.5)' }}>
+          <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.9rem 1.5rem' }}>
+            <a href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+              <span style={{ fontSize: '1.5rem', lineHeight: 1 }}>🪨</span>
+              <span style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: '1.25rem', color: 'var(--rust-lt)', letterSpacing: '0.05em' }}>ROCKHOUNDING FINDER</span>
+            </a>
+            <nav style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+              <a href="/" style={{ color: 'var(--rust-pale)', fontSize: '0.88rem', fontWeight: 600, textDecoration: 'none', fontFamily: 'var(--font-body)', letterSpacing: '0.04em' }}>Home</a>
+              <a href="/browse-states" style={{ color: 'var(--rust-pale)', fontSize: '0.88rem', fontWeight: 600, textDecoration: 'none', fontFamily: 'var(--font-body)', letterSpacing: '0.04em' }}>Browse</a>
+              <a href="/about" style={{ color: 'var(--rust-pale)', fontSize: '0.88rem', fontWeight: 600, textDecoration: 'none', fontFamily: 'var(--font-body)', letterSpacing: '0.04em' }}>About</a>
+            </nav>
+          </div>
         </header>
 
-        <main style={{ minHeight: "calc(100vh - 200px)" }}>{children}</main>
+        <main style={{ minHeight: 'calc(100vh - 340px)' }}>{children}</main>
 
-        <footer
-          style={{
-            backgroundColor: brandColor,
-            color: "white",
-            padding: "3rem 2rem",
-            marginTop: "4rem",
-          }}
-        >
-          <div
-            style={{
-              maxWidth: "1200px",
-              margin: "0 auto",
-              display: "grid",
-              gridTemplateColumns: "repeat(2, 1fr)",
-              gap: "2rem",
-            }}
-          >
-            <div>
-              <h3 style={{ color: accentColor, marginTop: 0 }}>
-                Directory Sites
-              </h3>
-              <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-                <li>
-                  <a
-                    href="https://publicboatramps.com"
-                    style={{ color: "#ddd", textDecoration: "none" }}
-                  >
-                    Public Boat Ramps
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://findswimspots.com"
-                    style={{ color: "#ddd", textDecoration: "none" }}
-                  >
-                    Find Swim Spots
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://craftdistilleryfinder.com"
-                    style={{ color: "#ddd", textDecoration: "none" }}
-                  >
-                    Craft Distillery Finder
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://driveintonight.com"
-                    style={{ color: "#ddd", textDecoration: "none" }}
-                  >
-                    Drive-In Tonight
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://allskateparks.com"
-                    style={{ color: "#ddd", textDecoration: "none" }}
-                  >
-                    All Skate Parks
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://nearbyescaperooms.com"
-                    style={{ color: "#ddd", textDecoration: "none" }}
-                  >
-                    Nearby Escape Rooms
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://allskatingrinks.com"
-                    style={{ color: "#ddd", textDecoration: "none" }}
-                  >
-                    All Skating Rinks
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://soakusa.net"
-                    style={{ color: "#ddd", textDecoration: "none" }}
-                  >
-                    Soak USA
-                  </a>
-                </li>
-              </ul>
+        <footer style={{ background: 'var(--earth)', borderTop: '3px solid var(--earth-mid)', marginTop: '5rem', padding: '3rem 0 2rem' }}>
+          <div className="container">
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem', marginBottom: '2.5rem' }}>
+              <div>
+                <p style={{ fontFamily: 'var(--font-display)', color: 'var(--rust-lt)', fontWeight: 600, fontSize: '1.15rem', letterSpacing: '0.05em', marginBottom: '0.75rem' }}>🪨 ROCKHOUNDING FINDER</p>
+                <p style={{ color: '#8a6a5a', fontSize: '0.875rem', lineHeight: 1.7 }}>Free directory of rockhounding sites, gem hunting locations, and mineral collecting spots across the United States.</p>
+              </div>
+              <div>
+                <h4 style={{ color: 'var(--rust)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.14em', marginBottom: '1rem', fontFamily: 'var(--font-body)', fontWeight: 700 }}>Directory Sites</h4>
+                <ul style={{ listStyle: 'none' }}>
+                  {directorySites.map((s) => <li key={s.href} style={{ marginBottom: '0.4rem' }}><a href={s.href} target="_blank" rel="noopener noreferrer" style={{ color: '#8a6a5a', fontSize: '0.875rem', textDecoration: 'none' }}>{s.name}</a></li>)}
+                </ul>
+              </div>
+              <div>
+                <h4 style={{ color: 'var(--rust)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.14em', marginBottom: '1rem', fontFamily: 'var(--font-body)', fontWeight: 700 }}>Tools</h4>
+                <ul style={{ listStyle: 'none' }}>
+                  {toolSites.map((s) => <li key={s.href} style={{ marginBottom: '0.4rem' }}><a href={s.href} target="_blank" rel="noopener noreferrer" style={{ color: '#8a6a5a', fontSize: '0.875rem', textDecoration: 'none' }}>{s.name}</a></li>)}
+                </ul>
+              </div>
             </div>
-
-            <div>
-              <h3 style={{ color: accentColor, marginTop: 0 }}>Tool Sites</h3>
-              <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-                <li>
-                  <a
-                    href="https://fibertools.app"
-                    style={{ color: "#ddd", textDecoration: "none" }}
-                  >
-                    Fiber Tools
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://mindchecktools.com"
-                    style={{ color: "#ddd", textDecoration: "none" }}
-                  >
-                    Mind Check Tools
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://flipmycase.com"
-                    style={{ color: "#ddd", textDecoration: "none" }}
-                  >
-                    Flip My Case
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://creatorrevenuecalculator.com"
-                    style={{ color: "#ddd", textDecoration: "none" }}
-                  >
-                    Creator Revenue Calculator
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://contractextract.com"
-                    style={{ color: "#ddd", textDecoration: "none" }}
-                  >
-                    Contract Extract
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://medicalbillreader.com"
-                    style={{ color: "#ddd", textDecoration: "none" }}
-                  >
-                    Medical Bill Reader
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://taxbreaktools.com"
-                    style={{ color: "#ddd", textDecoration: "none" }}
-                  >
-                    Tax Break Tools
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://524tracker.com"
-                    style={{ color: "#ddd", textDecoration: "none" }}
-                  >
-                    524 Tracker
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div
-            style={{
-              maxWidth: "1200px",
-              margin: "2rem auto 0",
-              paddingTop: "2rem",
-              borderTop: `1px solid rgba(255,255,255,0.2)`,
-              textAlign: "center",
-              fontSize: "0.9rem",
-            }}
-          >
-            <p style={{ margin: 0 }}>
-              &copy; 2024 Rockhounding Finder. All rights reserved.
-            </p>
-            <div style={{ marginTop: "1rem" }}>
-              <a href="/privacy" style={{ color: "#ddd", textDecoration: "none", marginRight: "1rem" }}>
-                Privacy Policy
-              </a>
-              <a href="/terms" style={{ color: "#ddd", textDecoration: "none" }}>
-                Terms of Service
-              </a>
+            <div style={{ borderTop: '1px solid rgba(255,255,255,0.07)', paddingTop: '1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+              <p style={{ color: '#5a3a2a', fontSize: '0.85rem' }}>© 2026 Rockhounding Finder. All rights reserved.</p>
+              <div style={{ display: 'flex', gap: '1.5rem' }}>
+                {[['Privacy', '/privacy'], ['Terms', '/terms'], ['Contact', '/contact'], ['About', '/about']].map(([l, h]) => (
+                  <a key={h} href={h} style={{ color: '#5a3a2a', fontSize: '0.85rem', textDecoration: 'none', fontFamily: 'var(--font-body)' }}>{l}</a>
+                ))}
+              </div>
             </div>
           </div>
         </footer>

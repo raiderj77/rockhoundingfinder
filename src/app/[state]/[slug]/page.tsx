@@ -1,328 +1,174 @@
-import locations from "@/data/locations.json";
+/* eslint-disable @next/next/no-img-element */
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import locations from '@/data/locations.json';
 
 export const revalidate = 86400;
 
 export async function generateStaticParams() {
-  return locations.map((location) => ({
-    state: location.stateSlug,
-    slug: location.slug,
-  }));
+  return locations.map((l) => ({ state: l.stateSlug, slug: l.slug }));
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ state: string; slug: string }>;
-}) {
-  const { state, slug } = await params;
-  const location = locations.find(
-    (loc) => loc.stateSlug === state && loc.slug === slug
-  );
-
-  if (!location) {
-    return {
-      title: "Not Found",
-      description: "Rockhounding site not found.",
-    };
-  }
-
+export async function generateMetadata({ params }: { params: Promise<{ state: string; slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const loc = locations.find((l) => l.slug === slug);
+  if (!loc) return {};
   return {
-    title: `${location.name} - Rockhounding Site in ${location.state}`,
-    description: `${location.description} Located in ${location.city}, ${location.state}. Find minerals, amenities, and details about this rockhounding location.`,
+    title: `${loc.name} — Rockhounding Site in ${loc.state}`,
+    description: `${loc.description.slice(0, 155)}`,
+    alternates: { canonical: `https://rockhoundingfinder.com/${loc.stateSlug}/${loc.slug}` },
   };
 }
 
-export default async function LocationPage({
-  params,
-}: {
-  params: Promise<{ state: string; slug: string }>;
-}) {
+const AMENITY_ICONS: Record<string, string> = {
+  'Parking': '🅿️', 'Restrooms': '🚻', 'Camping': '⛺', 'Trails': '🥾',
+  'Picnic area': '🌳', 'Fee required': '💵', 'Free access': '✅',
+  'BLM land': '🗺️', 'State park': '🏞️', 'Private mine': '⛏️',
+  'Permit required': '📋', 'Tools allowed': '🔨', 'GPS recommended': '📍',
+  'Guided tours': '👷', 'Water available': '💧', 'Dog friendly': '🐕',
+};
+
+const HERO_KEYWORDS = ['rocks+minerals','gem+hunting','quartz+crystal','mineral+collecting','gemstone+mining','crystal+cave','agate+stones','rockhounding+site'];
+
+export default async function SitePage({ params }: { params: Promise<{ state: string; slug: string }> }) {
   const { state, slug } = await params;
-  const location = locations.find(
-    (loc) => loc.stateSlug === state && loc.slug === slug
-  );
+  const loc = locations.find((l) => l.slug === slug && l.stateSlug === state);
+  if (!loc) notFound();
 
-  if (!location) {
-    return (
-      <div style={{ padding: "4rem 2rem", textAlign: "center" }}>
-        <h1>Not Found</h1>
-        <p>The rockhounding site you're looking for doesn't exist.</p>
-        <a href="/">Return Home</a>
-      </div>
-    );
-  }
-
-  const brandColor = "#3d2b1f";
-  const accentColor = "#c47b00";
-  const accessType = location.amenities.find((a) =>
-    a.includes("Fee") || a.includes("Public")
-  );
-  const minerals = location.amenities.find((a) => a.includes("Minerals"));
-  const facilities = location.amenities.filter((a) => a.includes(":"));
+  const related = locations.filter((l) => l.stateSlug === state && l.slug !== slug).slice(0, 3);
+  const heroKw = HERO_KEYWORDS[Math.abs(slug.charCodeAt(0) - 97) % HERO_KEYWORDS.length];
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Place",
-            name: location.name,
-            description: location.description,
-            address: {
-              "@type": "PostalAddress",
-              addressLocality: location.city,
-              addressRegion: location.state,
-              addressCountry: "US",
-            },
-            geo: {
-              "@type": "GeoCoordinates",
-              latitude: location.lat,
-              longitude: location.lng,
-            },
-          }),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            itemListElement: [
-              {
-                "@type": "ListItem",
-                position: 1,
-                name: "Home",
-                item: "https://rockhoundingfinder.com",
-              },
-              {
-                "@type": "ListItem",
-                position: 2,
-                name: location.state,
-                item: `https://rockhoundingfinder.com/${location.stateSlug}`,
-              },
-              {
-                "@type": "ListItem",
-                position: 3,
-                name: location.name,
-                item: `https://rockhoundingfinder.com/${location.stateSlug}/${location.slug}`,
-              },
-            ],
-          }),
-        }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context':'https://schema.org','@type':'TouristAttraction',
+        name: loc.name,
+        description: loc.description,
+        address: { '@type':'PostalAddress', addressLocality: loc.city || '', addressRegion: loc.state, addressCountry:'US' },
+        ...(loc.lat && loc.lng ? { geo: { '@type':'GeoCoordinates', latitude: loc.lat, longitude: loc.lng } } : {}),
+        url: `https://rockhoundingfinder.com/${loc.stateSlug}/${loc.slug}`,
+      }) }} />
 
-      <section
-        style={{
-          backgroundImage: "linear-gradient(135deg, #3d2b1f 0%, #5d4b3f 100%)",
-          color: "white",
-          padding: "4rem 2rem",
-        }}
-      >
-        <div style={{ maxWidth: "1000px", margin: "0 auto" }}>
-          <nav
-            style={{
-              fontSize: "0.95rem",
-              marginBottom: "1rem",
-              color: "#ddd",
-            }}
-          >
-            <a
-              href="/"
-              style={{
-                color: accentColor,
-                textDecoration: "none",
-                marginRight: "0.5rem",
-              }}
-            >
-              Home
-            </a>
-            {" / "}
-            <a
-              href={`/${location.stateSlug}`}
-              style={{
-                color: accentColor,
-                textDecoration: "none",
-                margin: "0 0.5rem",
-              }}
-            >
-              {location.state}
-            </a>
-            {" / "}
-            <span style={{ marginLeft: "0.5rem" }}>{location.name}</span>
-          </nav>
-          <h1 style={{ fontSize: "2.8rem", margin: "1rem 0 0.5rem 0" }}>
-            {location.name}
-          </h1>
-          <p
-            style={{
-              fontSize: "1.2rem",
-              margin: 0,
-              color: "#ddd",
-            }}
-          >
-            {location.city}, {location.state}
-          </p>
+      {/* Hero */}
+      <section style={{ position: 'relative', height: '440px', overflow: 'hidden' }}>
+        <img src={`https://source.unsplash.com/1400x600/?${heroKw}&sig=${slug.length}`} alt={loc.name} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} width={1400} height={600} />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(44,24,16,0.92) 0%, rgba(44,24,16,0.55) 50%, rgba(44,24,16,0.2) 100%)' }} />
+        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'repeating-linear-gradient(160deg, transparent 0px, transparent 60px, rgba(196,82,26,0.03) 60px, rgba(196,82,26,0.03) 62px)', pointerEvents: 'none' }} />
+        <div className="container" style={{ position: 'absolute', bottom: '2.5rem', left: '50%', transform: 'translateX(-50%)', width: '100%' }}>
+          <Link href={`/${state}`} style={{ color: 'var(--rust-lt)', fontSize: '0.82rem', display: 'inline-flex', alignItems: 'center', gap: '0.4rem', marginBottom: '1rem', fontWeight: 700, fontFamily: 'var(--font-body)', textTransform: 'uppercase', letterSpacing: '0.08em', textDecoration: 'none' }}>← {loc.state}</Link>
+          <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.8rem,4vw,3rem)', color: 'var(--white)', marginBottom: '0.75rem', letterSpacing: '0.04em', fontWeight: 700, lineHeight: 1.1 }}>{loc.name.toUpperCase()}</h1>
+          <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap', alignItems: 'center' }}>
+            <span className="chip chip-white">📍 {loc.city ? `${loc.city}, ` : ''}{loc.state}</span>
+            {loc.amenities.slice(0,2).map((a) => <span key={a} className="chip chip-white">{a}</span>)}
+          </div>
+        </div>
+        <svg aria-hidden viewBox="0 0 1440 40" xmlns="http://www.w3.org/2000/svg" style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', display: 'block' }} preserveAspectRatio="none">
+          <path d="M0,20 C480,40 960,0 1440,20 L1440,40 L0,40 Z" fill="var(--ivory)" />
+        </svg>
+      </section>
+
+      {/* Content */}
+      <section style={{ padding: '4rem 1.5rem' }}>
+        <div className="container">
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 340px', gap: '2.5rem', alignItems: 'start' }}>
+
+            {/* Left */}
+            <div>
+              <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.7rem', color: 'var(--earth)', marginBottom: '1rem', letterSpacing: '0.04em' }}>ABOUT THIS SITE</h2>
+              <p style={{ lineHeight: 1.85, marginBottom: '1.5rem', color: '#445' }}>{loc.description}</p>
+
+              {loc.amenities.length > 0 && (
+                <div style={{ marginBottom: '2rem' }}>
+                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', color: 'var(--earth)', marginBottom: '0.9rem', letterSpacing: '0.04em' }}>SITE FEATURES</h3>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '0.6rem' }}>
+                    {loc.amenities.map((a) => (
+                      <div key={a} style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', padding: '0.65rem 1rem', background: 'var(--white)', borderRadius: 'var(--radius-sm)', border: '1px solid rgba(196,82,26,0.12)', borderLeft: '3px solid var(--rust)', fontSize: '0.875rem', fontFamily: 'var(--font-body)', color: 'var(--earth)', fontWeight: 600 }}>
+                        <span>{AMENITY_ICONS[a] ?? '✦'}</span><span>{a}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Map placeholder */}
+              <div style={{ borderRadius: 'var(--radius)', overflow: 'hidden', border: '2px solid rgba(196,82,26,0.15)', marginBottom: '1.5rem' }}>
+                <div style={{ background: 'linear-gradient(135deg, var(--earth) 0%, #1a3a1a 100%)', height: '220px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '0.75rem' }}>
+                  <span style={{ fontSize: '2.5rem' }}>🗺️</span>
+                  <p style={{ color: 'var(--rust-lt)', fontFamily: 'var(--font-display)', fontSize: '1.1rem', letterSpacing: '0.06em' }}>GPS LOCATION</p>
+                  {loc.lat && loc.lng ? (
+                    <p style={{ color: '#c0a090', fontSize: '0.875rem', fontFamily: 'var(--font-body)' }}>{loc.lat.toFixed(5)}°N, {Math.abs(loc.lng).toFixed(5)}°W</p>
+                  ) : (
+                    <p style={{ color: '#c0a090', fontSize: '0.875rem', fontFamily: 'var(--font-body)' }}>{loc.city ? `${loc.city}, ` : ''}{loc.state}</p>
+                  )}
+                </div>
+                {loc.lat && loc.lng && (
+                  <a href={`https://www.google.com/maps?q=${loc.lat},${loc.lng}`} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', padding: '0.85rem', background: 'var(--rust)', color: 'var(--white)', fontWeight: 700, fontSize: '0.875rem', fontFamily: 'var(--font-body)', textDecoration: 'none', letterSpacing: '0.04em', textTransform: 'uppercase' }}>
+                    Open in Google Maps →
+                  </a>
+                )}
+              </div>
+
+              {/* Ethics reminder */}
+              <div style={{ background: 'rgba(26,122,122,0.07)', border: '1px solid rgba(26,122,122,0.2)', borderRadius: 'var(--radius)', padding: '1.25rem 1.5rem' }}>
+                <p style={{ fontFamily: 'var(--font-display)', color: 'var(--teal)', fontSize: '1rem', marginBottom: '0.5rem', letterSpacing: '0.04em' }}>🪨 ROCKHOUND CODE OF ETHICS</p>
+                <p style={{ fontSize: '0.875rem', color: '#445', lineHeight: 1.7, fontFamily: 'var(--font-body)' }}>Fill all excavation holes. Take only what you can use. Leave the site as you found it. Respect all land ownership rules and permit requirements.</p>
+              </div>
+            </div>
+
+            {/* Right — sticky panel */}
+            <aside style={{ position: 'sticky', top: '5.5rem' }}>
+              <div style={{ background: 'var(--white)', borderRadius: 'var(--radius)', boxShadow: 'var(--shadow-card)', overflow: 'hidden', border: '1px solid rgba(196,82,26,0.12)' }}>
+                <div style={{ background: 'var(--earth)', padding: '1.25rem 1.5rem', borderBottom: '3px solid var(--rust)' }}>
+                  <p style={{ fontFamily: 'var(--font-display)', color: 'var(--rust-lt)', fontSize: '1.1rem', letterSpacing: '0.06em', marginBottom: '0.25rem' }}>SITE INFO</p>
+                  <p style={{ color: '#c0a090', fontSize: '0.8rem', fontFamily: 'var(--font-body)' }}>{loc.name}</p>
+                </div>
+                <div style={{ padding: '1.25rem 1.5rem' }}>
+                  {[
+                    { label: 'Location', value: `${loc.city ? `${loc.city}, ` : ''}${loc.state}` },
+                    ...(loc.lat && loc.lng ? [{ label: 'Coordinates', value: `${loc.lat.toFixed(4)}°N, ${Math.abs(loc.lng).toFixed(4)}°W` }] : []),
+                    { label: 'Access', value: loc.amenities.find((a) => a.toLowerCase().includes('free') || a.toLowerCase().includes('fee')) ?? 'See site details' },
+                  ].map(({ label, value }) => (
+                    <div key={label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1rem', padding: '0.65rem 0', borderBottom: '1px solid rgba(196,82,26,0.08)' }}>
+                      <span style={{ fontSize: '0.8rem', color: 'var(--gray)', textTransform: 'uppercase', letterSpacing: '0.08em', fontFamily: 'var(--font-body)', fontWeight: 700, flexShrink: 0 }}>{label}</span>
+                      <span style={{ fontSize: '0.875rem', color: 'var(--earth)', fontFamily: 'var(--font-body)', textAlign: 'right' }}>{value}</span>
+                    </div>
+                  ))}
+                  <Link href={`/${state}`} className="btn btn-rust" style={{ display: 'flex', justifyContent: 'center', marginTop: '1.25rem', fontSize: '0.875rem', padding: '0.75rem 1.5rem' }}>More Sites in {loc.state}</Link>
+                </div>
+              </div>
+
+              {/* Disclaimer */}
+              <div style={{ marginTop: '1rem', padding: '1rem 1.25rem', background: 'var(--cream)', borderRadius: 'var(--radius-sm)', border: '1px solid rgba(196,82,26,0.1)' }}>
+                <p style={{ fontSize: '0.775rem', color: 'var(--gray)', lineHeight: 1.65, fontFamily: 'var(--font-body)' }}>Site conditions change. Always verify land status, permit requirements, and access before collecting. Information is provided for reference only.</p>
+              </div>
+            </aside>
+          </div>
         </div>
       </section>
 
-      <section
-        style={{
-          maxWidth: "1000px",
-          margin: "3rem auto",
-          padding: "0 2rem",
-        }}
-      >
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "2fr 1fr",
-            gap: "2rem",
-            marginBottom: "3rem",
-          }}
-        >
-          <div>
-            <h2 style={{ color: brandColor, fontSize: "1.8rem" }}>About</h2>
-            <p style={{ lineHeight: "1.8", fontSize: "1.1rem" }}>
-              {location.description}
-            </p>
-
-            <h2 style={{ color: brandColor, fontSize: "1.8rem", marginTop: "2rem" }}>
-              Location Details
-            </h2>
-            <p>
-              <strong>Coordinates:</strong> {location.lat.toFixed(4)},{" "}
-              {location.lng.toFixed(4)}
-            </p>
-            <p>
-              <strong>City:</strong> {location.city}
-            </p>
-            <p>
-              <strong>State:</strong> {location.state}
-            </p>
-
-            {minerals && (
-              <>
-                <h2
-                  style={{ color: brandColor, fontSize: "1.8rem", marginTop: "2rem" }}
-                >
-                  Minerals & Gems Found
-                </h2>
-                <p style={{ lineHeight: "1.8" }}>
-                  {minerals.replace("Minerals: ", "")}
-                </p>
-              </>
-            )}
-
-            {accessType && (
-              <>
-                <h2
-                  style={{ color: brandColor, fontSize: "1.8rem", marginTop: "2rem" }}
-                >
-                  Access & Fees
-                </h2>
-                <p style={{ lineHeight: "1.8" }}>{accessType}</p>
-              </>
-            )}
-
-            <h2
-              style={{ color: brandColor, fontSize: "1.8rem", marginTop: "2rem" }}
-            >
-              Visitor Tips
-            </h2>
-            <ul style={{ lineHeight: "2", marginBottom: 0 }}>
-              <li>
-                Always check current conditions and closures before visiting
-              </li>
-              <li>Bring plenty of water and sun protection</li>
-              <li>Wear sturdy shoes and appropriate safety gear</li>
-              <li>Respect Leave No Trace principles</li>
-              <li>
-                Contact the site operator or managing agency for current
-                regulations
-              </li>
-            </ul>
-          </div>
-
-          <aside
-            style={{
-              backgroundColor: "#f9f9f9",
-              padding: "1.5rem",
-              borderRadius: "8px",
-              border: `2px solid ${accentColor}`,
-              height: "fit-content",
-            }}
-          >
-            <h3
-              style={{ color: accentColor, marginTop: 0, fontSize: "1.3rem" }}
-            >
-              Amenities & Info
-            </h3>
-            <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-              {location.amenities.map((amenity, idx) => (
-                <div
-                  key={idx}
-                  style={{
-                    padding: "0.8rem",
-                    backgroundColor: "white",
-                    borderLeft: `4px solid ${accentColor}`,
-                    borderRadius: "4px",
-                  }}
-                >
-                  <strong style={{ color: brandColor }}>{amenity}</strong>
-                </div>
+      {/* Related */}
+      {related.length > 0 && (
+        <section style={{ background: 'var(--cream)', borderTop: '1px solid rgba(196,82,26,0.08)', padding: '4rem 1.5rem' }}>
+          <div className="container">
+            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.6rem', color: 'var(--earth)', marginBottom: '2rem', letterSpacing: '0.04em' }}>MORE SITES IN {loc.state.toUpperCase()}</h2>
+            <div className="grid-3">
+              {related.map((r, i) => (
+                <Link key={r.slug} href={`/${r.stateSlug}/${r.slug}`} style={{ textDecoration: 'none' }}>
+                  <article className="card">
+                    <img src={`https://source.unsplash.com/800x500/?${HERO_KEYWORDS[i%HERO_KEYWORDS.length]}&sig=${i+80}`} alt={r.name} className="card-img" loading="lazy" width={800} height={500} />
+                    <div className="card-body">
+                      <div className="card-meta"><span>📍</span><span>{r.city ? `${r.city}, ` : ''}{r.state}</span></div>
+                      <h3 className="card-title">{r.name}</h3>
+                      <p style={{ fontSize: '0.875rem', color: '#667', lineHeight: 1.65, flex: 1, marginBottom: '0.75rem' }}>{r.description.slice(0,90)}…</p>
+                    </div>
+                  </article>
+                </Link>
               ))}
             </div>
-
-            <div style={{ marginTop: "2rem", paddingTop: "2rem", borderTop: `1px solid #ddd` }}>
-              <h4 style={{ color: brandColor, marginTop: 0 }}>Before You Go</h4>
-              <ul
-                style={{
-                  margin: 0,
-                  paddingLeft: "1.2rem",
-                  fontSize: "0.95rem",
-                  lineHeight: "1.8",
-                }}
-              >
-                <li>Check hours and seasonal closures</li>
-                <li>Verify any permit requirements</li>
-                <li>Read safety and access rules</li>
-                <li>Bring appropriate tools and protection</li>
-              </ul>
-            </div>
-          </aside>
-        </div>
-
-        <section
-          style={{
-            backgroundColor: "#f9f9f9",
-            padding: "2rem",
-            borderRadius: "8px",
-            marginTop: "3rem",
-          }}
-        >
-          <h2 style={{ color: brandColor, fontSize: "1.6rem", marginTop: 0 }}>
-            Planning Your Visit
-          </h2>
-          <p style={{ lineHeight: "1.8" }}>
-            Before heading to {location.name}, we recommend contacting the site
-            operator or the managing agency (BLM, Forest Service, or state park
-            authority) to confirm current conditions, access rules, and any
-            permit requirements. Rockhounding regulations can change seasonally
-            or due to environmental concerns, so it's important to verify the
-            information before your trip.
-          </p>
-          <p style={{ lineHeight: "1.8" }}>
-            Pack essential supplies including water, first aid, sunscreen, and
-            appropriate tools. Bring your camera to document your finds, and
-            consider keeping a rockhounding journal to record your discoveries,
-            locations, and techniques. Always practice responsible collection and
-            respect the natural environment for future rockhounders.
-          </p>
+          </div>
         </section>
-      </section>
+      )}
     </>
   );
 }
