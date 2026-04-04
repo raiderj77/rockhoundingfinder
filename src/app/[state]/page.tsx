@@ -139,18 +139,6 @@ export default async function StatePage({
                   color: "inherit",
                   transition: "all 0.3s",
                 }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.boxShadow =
-                    "0 8px 20px rgba(196, 123, 0, 0.3)";
-                  (e.currentTarget as HTMLAnchorElement).style.transform =
-                    "translateY(-4px)";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.boxShadow =
-                    "none";
-                  (e.currentTarget as HTMLAnchorElement).style.transform =
-                    "translateY(0)";
-                }}
               >
                 <h3 style={{ color: accentColor, margin: "0 0 0.5rem 0" }}>
                   {location.name}
