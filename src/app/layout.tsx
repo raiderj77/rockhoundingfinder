@@ -49,7 +49,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta name="Bing-verification" content="C4C9B6256BDEDED169E4DE01CA953390" />
+        <meta name="msvalidate.01" content="C4C9B6256BDEDED169E4DE01CA953390" />
         <meta
           name="google-site-verification"
           content="rockhoundingfinder-verification"
