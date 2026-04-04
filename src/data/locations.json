@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Sapphire Gallery",
+    "slug": "sapphire-gallery",
+    "state": "Montana",
+    "stateSlug": "montana",
+    "city": "Helena",
+    "lat": 46.5891,
+    "lng": -112.0000,
+    "description": "Historic sapphire mining area near Helena with stunning blue sapphires. Open to public rockhounders during designated seasons. Professional-grade specimens and collector-quality gems available.",
+    "amenities": ["Public access", "Fee: Free", "Minerals: Sapphires", "BLM land", "No permit required", "Parking available"]
+  },
+  {
+    "id": 2,
+    "name": "Gem Valley Mine",
+    "slug": "gem-valley-mine",
+    "state": "Idaho",
+    "stateSlug": "idaho",
+    "city": "Estes",
+    "lat": 45.8245,
+    "lng": -114.8765,
+    "description": "Premier garnet mining location in central Idaho's gem valley. Fee-dig operation with excellent finds of deep red garnets. Equipment rental available.",
+    "amenities": ["Fee-dig site", "Fee: $25/day", "Minerals: Garnets", "Facilities: Restrooms", "Tools available for rent", "Group discounts"]
+  },
+  {
+    "id": 3,
+    "name": "Sunstone Point",
+    "slug": "sunstone-point",
+    "state": "Oregon",
+    "stateSlug": "oregon",
+    "city": "Plush",
+    "lat": 42.7012,
+    "lng": -120.4505,
+    "description": "Famous sunstone collecting area in south-central Oregon. Beautiful peachy-orange sunstones are abundant. Permits required but easily obtained from local BLM office.",
+    "amenities": ["Public access", "Fee: Free", "Minerals: Sunstones", "BLM land", "Permit required ($5)", "Water available"]
+  },
+  {
+    "id": 4,
+    "name": "Jade Cove",
+    "slug": "jade-cove",
+    "state": "California",
+    "stateSlug": "california",
+    "city": "Monterey",
+    "lat": 36.2643,
+    "lng": -121.8344,
+    "description": "Coastal jade collecting site on California's Big Sur. World-class nephrite jade specimens found along beaches. Tide-dependent access.",
+    "amenities": ["Beach access", "Fee: Free", "Minerals: Jade, Nephrite", "Tide pools", "Scenic views", "Day use only"]
+  },
+  {
+    "id": 5,
+    "name": "Sleeping Beauty Mine",
+    "slug": "sleeping-beauty-mine",
+    "state": "Arizona",
+    "stateSlug": "arizona",
+    "city": "Globe",
+    "lat": 33.3916,
+    "lng": -110.7930,
+    "description": "Iconic turquoise mining area producing the famous Sleeping Beauty turquoise. Tour and collect on designated property. Educational tours available.",
+    "amenities": ["Fee property", "Fee: $30/person", "Minerals: Turquoise", "Tours offered", "Gift shop", "Restaurant nearby"]
+  },
+  {
+    "id": 6,
+    "name": "Agate Basin",
+    "slug": "agate-basin",
+    "state": "Wyoming",
+    "stateSlug": "wyoming",
+    "city": "Rawlins",
+    "lat": 41.7924,
+    "lng": -107.2339,
+    "description": "Large agate fields with colorful banded specimens. Public lands with abundant surface deposits. Great for beginners and families.",
+    "amenities": ["Public access", "Fee: Free", "Minerals: Agates", "BLM land", "No permit required", "Dispersed camping"]
+  },
+  {
+    "id": 7,
+    "name": "Virgin Valley Opal",
+    "slug": "virgin-valley-opal",
+    "state": "Nevada",
+    "stateSlug": "nevada",
+    "city": "McDermitt",
+    "lat": 41.7925,
+    "lng": -118.6738,
+    "description": "World-famous opal deposits in northern Nevada. Private claims available to collect. Beautiful fire opals and common opals found.",
+    "amenities": ["Fee property", "Fee: $10/day", "Minerals: Opals", "Camping available", "Tools rental", "Primitive facilities"]
+  },
+  {
+    "id": 8,
+    "name": "Petrified Forest Park",
+    "slug": "petrified-forest-park",
+    "state": "Texas",
+    "stateSlug": "texas",
+    "city": "Groveton",
+    "lat": 30.8268,
+    "lng": -95.2097,
+    "description": "Petrified wood collecting area in East Texas. Colorful specimens of various sizes. Public park with designated rockhounding areas.",
+    "amenities": ["Public park", "Fee: $5 entry", "Minerals: Petrified Wood", "Facilities available", "Picnic areas", "Educational programs"]
+  },
+  {
+    "id": 9,
+    "name": "Petoskey Stone Beach",
+    "slug": "petoskey-stone-beach",
+    "state": "Michigan",
+    "stateSlug": "michigan",
+    "city": "Petoskey",
+    "lat": 45.3557,
+    "lng": -84.9744,
+    "description": "Fossil coral deposits on Lake Michigan beaches. Petoskey stones are Michigan's state stone. Easy access and excellent specimens.",
+    "amenities": ["Public beach", "Fee: Free", "Minerals: Petoskey Stones", "Beach parking", "Visitor center", "Summer crowds"]
+  },
+  {
+    "id": 10,
+    "name": "Hiddenite Emerald Mine",
+    "slug": "hiddenite-emerald-mine",
+    "state": "North Carolina",
+    "stateSlug": "north-carolina",
+    "city": "Hiddenite",
+    "lat": 35.7245,
+    "lng": -81.7456,
+    "description": "Historic emerald mining area in western North Carolina. Fee-dig mine with professional equipment available. Beautiful green specimens.",
+    "amenities": ["Fee-dig site", "Fee: $20/hour", "Minerals: Emeralds, Hiddenite", "Equipment provided", "Shop on-site", "Group rates"]
+  }
+]

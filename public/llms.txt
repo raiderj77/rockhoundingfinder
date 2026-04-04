@@ -1,0 +1,56 @@
+# Rockhounding Finder - LLM Summary
+
+## Overview
+Rockhounding Finder (rockhoundingfinder.com) is a comprehensive directory of rockhounding sites, gem mining locations, and mineral collecting areas across the United States.
+
+## Purpose
+The site helps rockhounding enthusiasts discover public lands, fee-dig mines, state parks, and natural sites where gems and minerals can be collected. It serves beginners and experienced collectors alike.
+
+## Core Content
+- Directory of 10+ rockhounding locations across different US states
+- Detailed information about each site including location, minerals found, access type, and amenities
+- State-level directories grouping locations by state
+- Educational content about rockhounding, equipment, regulations, and best practices
+- FAQs and visitor guidance
+
+## Key Features
+- Searchable location directory organized by state
+- Detailed site pages with GPS coordinates, descriptions, and amenities
+- Information about minerals and gems specific to each region
+- Guidance on Leave No Trace principles and regulations
+- Links to sister directory and tool sites
+
+## Current Coverage
+10 featured locations across:
+- Montana (sapphires)
+- Idaho (garnets)
+- Oregon (sunstones)
+- California (jade)
+- Arizona (turquoise)
+- Wyoming (agates)
+- Nevada (opals)
+- Texas (petrified wood)
+- Michigan (Petoskey stones)
+- North Carolina (emeralds)
+
+## Target Audience
+- Rockhounding hobbyists and gem collectors
+- Beginners interested in learning about rockhounding
+- Families seeking outdoor activities
+- Gemstone and mineral enthusiasts
+
+## Information Accuracy Note
+Directory information is compiled from official site operators, BLM, Forest Service, state parks, and community sources. Users are advised to contact sites directly to confirm current conditions, hours, fees, and regulations before visiting.
+
+## Site Features
+- Google AdSense integration
+- Responsive design with inline styling
+- JSON-LD structured data (FAQPage, Organization, Place, BreadcrumbList)
+- Mobile-friendly navigation
+- Sister site footer with links to related directories and tools
+
+## Contact
+contact@rockhoundingfinder.com
+
+## Last Updated
+April 2024
