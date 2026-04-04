@@ -133,7 +133,7 @@ export default function Home() {
         >
           {featured.map((location) => (
             <a
-              key={location.id}
+              key={location.slug}
               href={`/${location.stateSlug}/${location.slug}`}
               style={{
                 padding: "1.5rem",

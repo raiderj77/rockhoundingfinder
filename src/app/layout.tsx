@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "geodes",
   ],
   metadataBase: new URL("https://rockhoundingfinder.com"),
-  canonical: "https://rockhoundingfinder.com",
+  alternates: { canonical: "https://rockhoundingfinder.com" },
   openGraph: {
     title:
       "Rockhounding Sites Directory | Find Public Rockhounding Locations",

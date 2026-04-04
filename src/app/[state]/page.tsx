@@ -129,7 +129,7 @@ export default async function StatePage({
           >
             {stateLocations.map((location) => (
               <a
-                key={location.id}
+                key={location.slug}
                 href={`/${location.stateSlug}/${location.slug}`}
                 style={{
                   padding: "1.5rem",
