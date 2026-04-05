@@ -52,7 +52,7 @@ export default async function SitePage({ params }: { params: Promise<{ state: st
 
       {/* Hero */}
       <section style={{ position: 'relative', height: '440px', overflow: 'hidden' }}>
-        <img src={`https://source.unsplash.com/1400x600/?${heroKw}&sig=${slug.length}`} alt={loc.name} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} width={1400} height={600} />
+        <img src={`https://picsum.photos/seed/${slug}/1400/600`} alt={loc.name} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} width={1400} height={600} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(44,24,16,0.92) 0%, rgba(44,24,16,0.55) 50%, rgba(44,24,16,0.2) 100%)' }} />
         <div style={{ position: 'absolute', inset: 0, backgroundImage: 'repeating-linear-gradient(160deg, transparent 0px, transparent 60px, rgba(196,82,26,0.03) 60px, rgba(196,82,26,0.03) 62px)', pointerEvents: 'none' }} />
         <div className="container" style={{ position: 'absolute', bottom: '2.5rem', left: '50%', transform: 'translateX(-50%)', width: '100%' }}>
@@ -156,7 +156,7 @@ export default async function SitePage({ params }: { params: Promise<{ state: st
               {related.map((r, i) => (
                 <Link key={r.slug} href={`/${r.stateSlug}/${r.slug}`} style={{ textDecoration: 'none' }}>
                   <article className="card">
-                    <img src={`https://source.unsplash.com/800x500/?${HERO_KEYWORDS[i%HERO_KEYWORDS.length]}&sig=${i+80}`} alt={r.name} className="card-img" loading="lazy" width={800} height={500} />
+                    <img src={`https://picsum.photos/seed/${r.slug}/800/500`} alt={r.name} className="card-img" loading="lazy" width={800} height={500} />
                     <div className="card-body">
                       <div className="card-meta"><span>📍</span><span>{r.city ? `${r.city}, ` : ''}{r.state}</span></div>
                       <h3 className="card-title">{r.name}</h3>
