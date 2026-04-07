@@ -19,16 +19,7 @@ Crawl-delay: 1
 User-agent: DuckDuckBot
 Allow: /
 
-# Block problematic bots
-User-agent: CCBot
-Disallow: /
-
-User-agent: Meta-ExternalAgent
-Disallow: /
-
-User-agent: Bytespider
-Disallow: /
-
+# Block commercial scrapers
 User-agent: AhrefsBot
 Disallow: /
 

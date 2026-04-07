@@ -17,7 +17,7 @@ export default function PrivacyPage() {
       <h1 style={{ color: brandColor }}>Privacy Policy</h1>
 
       <p style={{ lineHeight: "1.8" }}>
-        <strong>Last Updated:</strong> April 2024
+        <strong>Last Updated:</strong> April 2026
       </p>
 
       <h2 style={{ color: brandColor, marginTop: "2rem" }}>Introduction</h2>
@@ -46,7 +46,7 @@ export default function PrivacyPage() {
         </li>
         <li>
           <strong>Cookies and Tracking Technologies:</strong> We use cookies to
-          enhance your experience.
+          enhance your experience and serve relevant advertisements.
         </li>
       </ul>
 
@@ -63,6 +63,38 @@ export default function PrivacyPage() {
         <li>Monitor and analyze trends and usage</li>
         <li>Comply with legal obligations</li>
       </ul>
+
+      <h2 style={{ color: brandColor, marginTop: "2rem" }}>
+        Cookies and Advertising
+      </h2>
+      <p style={{ lineHeight: "1.8" }}>
+        We work with third-party advertising partners, including Google, who may
+        use cookies to serve ads based on your prior visits to this website or
+        other websites. Google&apos;s use of advertising cookies enables it and
+        its partners to serve ads to you based on your visit to our site and/or
+        other sites on the internet.
+      </p>
+      <p style={{ lineHeight: "1.8", marginTop: "1rem" }}>
+        You may opt out of personalized advertising by visiting{" "}
+        <a
+          href="https://ads.google.com/settings"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: brandColor }}
+        >
+          Google&apos;s Ad Settings
+        </a>{" "}
+        or the{" "}
+        <a
+          href="https://optout.aboutads.info"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: brandColor }}
+        >
+          Digital Advertising Alliance opt-out page
+        </a>
+        .
+      </p>
 
       <h2 style={{ color: brandColor, marginTop: "2rem" }}>
         Third-Party Disclosure
