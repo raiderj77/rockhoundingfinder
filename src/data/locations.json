@@ -31948,6 +31948,24 @@
     ]
   },
   {
+    "name": "Petrified Forest Park",
+    "slug": "petrified-forest-park",
+    "state": "Texas",
+    "stateSlug": "texas",
+    "city": "Gilmer",
+    "lat": 32.729,
+    "lng": -94.946,
+    "description": "Discover petrified wood and silicified specimens at Petrified Forest Park, a public collecting site in Gilmer, Upshur County, East Texas. Free access, easy terrain, and family-friendly conditions make this one of the best places in Texas to find ancient petrified wood. Fall and spring offer ideal collecting weather in the Piney Woods region.",
+    "amenities": [
+      "Free access",
+      "Public access",
+      "Surface collecting",
+      "Family friendly",
+      "Parking",
+      "Easy terrain"
+    ]
+  },
+  {
     "name": "Allah Mine",
     "slug": "allah-mine",
     "state": "Utah",
