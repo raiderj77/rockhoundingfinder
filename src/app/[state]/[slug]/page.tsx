@@ -29,7 +29,20 @@ const AMENITY_ICONS: Record<string, string> = {
   'Guided tours': '👷', 'Water available': '💧', 'Dog friendly': '🐕',
 };
 
-const HERO_KEYWORDS = ['rocks+minerals','gem+hunting','quartz+crystal','mineral+collecting','gemstone+mining','crystal+cave','agate+stones','rockhounding+site'];
+const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN ?? '';
+
+function getMapboxImage(lat: number, lng: number, width = 800, height = 500): string {
+  return `https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v12/static/${lng},${lat},14,0/${width}x${height}?access_token=${MAPBOX_TOKEN}`;
+}
+
+function getRockhoundPreview(d: { name: string; state: string; city: string; amenities: string[]; description: string }): string {
+  const amenityCount = d.amenities.length;
+  const location = d.city ? `${d.city}, ${d.state}` : d.state;
+  if (amenityCount >= 2) {
+    return `Rockhounding site in ${location} with ${d.amenities.slice(0, 2).join(' and ').toLowerCase()}.`;
+  }
+  return `Public rockhounding site in ${location}. Open for collecting.`;
+}
 
 export default async function SitePage({ params }: { params: Promise<{ state: string; slug: string }> }) {
   const { state, slug } = await params;
@@ -37,8 +50,6 @@ export default async function SitePage({ params }: { params: Promise<{ state: st
   if (!loc) notFound();
 
   const related = locations.filter((l) => l.stateSlug === state && l.slug !== slug).slice(0, 3);
-  const heroKw = HERO_KEYWORDS[Math.abs(slug.charCodeAt(0) - 97) % HERO_KEYWORDS.length];
-
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -51,8 +62,8 @@ export default async function SitePage({ params }: { params: Promise<{ state: st
       }) }} />
 
       {/* Hero */}
-      <section style={{ position: 'relative', height: '440px', overflow: 'hidden' }}>
-        <img src={`https://picsum.photos/seed/${slug}/1400/600`} alt={loc.name} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} width={1400} height={600} />
+      <section style={{ position: 'relative', height: '440px', overflow: 'hidden', background: 'linear-gradient(160deg, var(--earth) 0%, var(--earth-mid) 100%)' }}>
+        <img src={getMapboxImage(loc.lat ?? 36, loc.lng ?? -100, 1400, 600)} alt={loc.name} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', opacity: 0.85 }} width={1400} height={600} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(44,24,16,0.92) 0%, rgba(44,24,16,0.55) 50%, rgba(44,24,16,0.2) 100%)' }} />
         <div style={{ position: 'absolute', inset: 0, backgroundImage: 'repeating-linear-gradient(160deg, transparent 0px, transparent 60px, rgba(196,82,26,0.03) 60px, rgba(196,82,26,0.03) 62px)', pointerEvents: 'none' }} />
         <div className="container" style={{ position: 'absolute', bottom: '2.5rem', left: '50%', transform: 'translateX(-50%)', width: '100%' }}>
@@ -76,7 +87,11 @@ export default async function SitePage({ params }: { params: Promise<{ state: st
             {/* Left */}
             <div>
               <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.7rem', color: 'var(--earth)', marginBottom: '1rem', letterSpacing: '0.04em' }}>ABOUT THIS SITE</h2>
-              <p style={{ lineHeight: 1.85, marginBottom: '1.5rem', color: '#445' }}>{loc.description}</p>
+              <p style={{ lineHeight: 1.85, marginBottom: '1.5rem', color: '#445' }}>
+                {loc.name} is a rockhounding site located in {loc.city ? `${loc.city}, ` : ''}{loc.state}.{' '}
+                {loc.amenities.length > 0 ? `Collectors can find ${loc.amenities.slice(0, 2).join(' and ').toLowerCase()}.` : 'Open for public rock and mineral collecting.'}{' '}
+                GPS coordinates provided for navigation to the site.
+              </p>
 
               {loc.amenities.length > 0 && (
                 <div style={{ marginBottom: '2rem' }}>
@@ -160,7 +175,7 @@ export default async function SitePage({ params }: { params: Promise<{ state: st
                     <div className="card-body">
                       <div className="card-meta"><span>📍</span><span>{r.city ? `${r.city}, ` : ''}{r.state}</span></div>
                       <h3 className="card-title">{r.name}</h3>
-                      <p style={{ fontSize: '0.875rem', color: '#667', lineHeight: 1.65, flex: 1, marginBottom: '0.75rem' }}>{r.description.slice(0,90)}…</p>
+                      <p style={{ fontSize: '0.875rem', color: '#667', lineHeight: 1.65, flex: 1, marginBottom: '0.75rem' }}>{getRockhoundPreview(r)}</p>
                     </div>
                   </article>
                 </Link>

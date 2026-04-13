@@ -2,6 +2,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
+const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN ?? '';
+
+function getMapboxImage(lat: number, lng: number, width = 800, height = 500): string {
+  return `https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v12/static/${lng},${lat},14,0/${width}x${height}?access_token=${MAPBOX_TOKEN}`;
+}
+
 export const metadata: Metadata = {
   title: 'Petrified Forest Park Gilmer TX — Rockhounding Texas Petrified Wood',
   description:
@@ -141,11 +147,11 @@ export default function PetrifiedForestParkPage() {
       ))}
 
       {/* Hero */}
-      <section style={{ position: 'relative', height: '440px', overflow: 'hidden' }}>
+      <section style={{ position: 'relative', height: '440px', overflow: 'hidden', background: 'linear-gradient(160deg, var(--earth) 0%, var(--earth-mid) 100%)' }}>
         <img
-          src="https://picsum.photos/seed/petrified-forest-park/1400/600"
+          src={getMapboxImage(LAT, LNG, 1400, 600)}
           alt="Petrified Forest Park rockhounding site in Gilmer, Texas"
-          style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+          style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', opacity: 0.85 }}
           width={1400}
           height={600}
         />

@@ -51,7 +51,20 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   };
 }
 
-const IMG_KEYWORDS = ['rocks+minerals','gem+hunting','crystal+mining','quartz+crystal','gemstone','rockhounding+site','mineral+collecting','agate+stones'];
+const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN ?? '';
+
+function getMapboxImage(lat: number, lng: number, width = 800, height = 500): string {
+  return `https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v12/static/${lng},${lat},14,0/${width}x${height}?access_token=${MAPBOX_TOKEN}`;
+}
+
+function getRockhoundPreview(d: { name: string; state: string; city: string; amenities: string[]; description: string }): string {
+  const amenityCount = d.amenities.length;
+  const location = d.city ? `${d.city}, ${d.state}` : d.state;
+  if (amenityCount >= 2) {
+    return `Rockhounding site in ${location} with ${d.amenities.slice(0, 2).join(' and ').toLowerCase()}.`;
+  }
+  return `Public rockhounding site in ${location}. Open for collecting.`;
+}
 
 export default async function StatePage({ params }: { params: Promise<{ state: string }> }) {
   const { state } = await params;
@@ -95,11 +108,11 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
               {spots.map((spot, i) => (
                 <Link key={spot.slug} href={`/${state}/${spot.slug}`} style={{ textDecoration: 'none' }}>
                   <article className="card">
-                    <img src={`https://picsum.photos/seed/${spot.slug}/800/500`} alt={spot.name} className="card-img" loading="lazy" width={800} height={500} />
+                    <img src={getMapboxImage(spot.lat ?? 36, spot.lng ?? -100)} alt={spot.name} className="card-img" loading="lazy" width={800} height={500} />
                     <div className="card-body">
                       <div className="card-meta"><span>📍</span><span>{spot.city ? `${spot.city}, ` : ''}{spot.state}</span></div>
                       <h2 className="card-title">{spot.name}</h2>
-                      <p style={{ fontSize: '0.875rem', color: '#667', lineHeight: 1.65, flex: 1, marginBottom: '1rem', fontFamily: 'var(--font-body)' }}>{spot.description.slice(0,100)}…</p>
+                      <p style={{ fontSize: '0.875rem', color: '#667', lineHeight: 1.65, flex: 1, marginBottom: '1rem', fontFamily: 'var(--font-body)' }}>{getRockhoundPreview(spot)}</p>
                       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem' }}>
                         {spot.amenities.slice(0,3).map((a) => <span key={a} className="chip">{a}</span>)}
                       </div>

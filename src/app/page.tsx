@@ -20,7 +20,20 @@ const ALL_STATES = [
   'Virginia','Washington','West Virginia','Wisconsin','Wyoming',
 ];
 
-const IMG_KEYWORDS = ['rocks+minerals','gem+hunting','crystal+mining','quartz+crystal','gemstone','rockhounding+site'];
+const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN ?? '';
+
+function getMapboxImage(lat: number, lng: number, width = 800, height = 500): string {
+  return `https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v12/static/${lng},${lat},14,0/${width}x${height}?access_token=${MAPBOX_TOKEN}`;
+}
+
+function getRockhoundPreview(d: { name: string; state: string; city: string; amenities: string[]; description: string }): string {
+  const amenityCount = d.amenities.length;
+  const location = d.city ? `${d.city}, ${d.state}` : d.state;
+  if (amenityCount >= 2) {
+    return `Rockhounding site in ${location} with ${d.amenities.slice(0, 2).join(' and ').toLowerCase()}.`;
+  }
+  return `Public rockhounding site in ${location}. Open for collecting.`;
+}
 
 const websiteSchema = {
   '@context': 'https://schema.org',
@@ -125,12 +138,10 @@ export default function Home() {
           <p className="anim-fade-up anim-delay-2" style={{ fontSize: '1.05rem', color: '#c0a090', marginBottom: '2.75rem', maxWidth: '500px', margin: '0 auto 2.75rem', fontFamily: 'var(--font-body)', lineHeight: 1.65 }}>
             Gems, crystals, agates, fossils &amp; minerals — {locations.length}+ collecting sites with GPS coordinates.
           </p>
-          <form method="GET" action="/search" className="anim-fade-up anim-delay-3">
-            <div className="search-wrap">
-              <input type="text" name="q" placeholder="Search by state, city, or mineral type…" className="search-input" />
-              <button type="submit" className="search-btn">Find Sites</button>
-            </div>
-          </form>
+          <div className="anim-fade-up anim-delay-3" style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center', marginTop: '2rem' }}>
+            <a href="/texas" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.85rem 2rem', borderRadius: '6px', fontWeight: 700, fontSize: '0.95rem', background: 'var(--rust)', color: 'white', textDecoration: 'none', transition: 'background 0.2s' }}>Find Rockhounding Sites →</a>
+            <a href="/arizona" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.85rem 2rem', borderRadius: '6px', fontWeight: 700, fontSize: '0.95rem', background: 'transparent', color: 'white', border: '2px solid rgba(196,82,26,0.5)', textDecoration: 'none', transition: 'background 0.2s' }}>Browse by State</a>
+          </div>
         </div>
         <svg aria-hidden viewBox="0 0 1440 55" xmlns="http://www.w3.org/2000/svg" style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', display: 'block' }} preserveAspectRatio="none">
           <path d="M0,28 C360,55 1080,0 1440,28 L1440,55 L0,55 Z" fill="var(--ivory)" />
@@ -164,11 +175,11 @@ export default function Home() {
             {featured.map((loc, i) => (
               <Link key={loc.slug} href={`/${loc.stateSlug}/${loc.slug}`} style={{ textDecoration: 'none' }}>
                 <article className="card">
-                  <img src={`https://picsum.photos/seed/${loc.slug}/800/500`} alt={loc.name} className="card-img" loading="lazy" width={800} height={500} />
+                  <img src={getMapboxImage(loc.lat ?? 36, loc.lng ?? -100)} alt={loc.name} className="card-img" loading="lazy" width={800} height={500} />
                   <div className="card-body">
                     <div className="card-meta"><span>📍</span><span>{loc.city ? `${loc.city}, ` : ''}{loc.state}</span></div>
                     <h3 className="card-title">{loc.name}</h3>
-                    <p style={{ fontSize: '0.875rem', color: '#667', lineHeight: 1.65, flex: 1, marginBottom: '1rem' }}>{loc.description.slice(0,110)}…</p>
+                    <p style={{ fontSize: '0.875rem', color: '#667', lineHeight: 1.65, flex: 1, marginBottom: '1rem' }}>{getRockhoundPreview(loc)}</p>
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
                       {loc.amenities.slice(0,3).map((a) => <span key={a} className="chip">{a}</span>)}
                     </div>
