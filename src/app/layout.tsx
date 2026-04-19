@@ -13,7 +13,11 @@ export const metadata: Metadata = {
   keywords: 'rockhounding, gem hunting, mineral collecting, fossil sites, crystal hunting, rockhounding near me',
   metadataBase: new URL('https://rockhoundingfinder.com'),
   alternates: { canonical: 'https://rockhoundingfinder.com' },
-  robots: 'index, follow, max-snippet:-1',
+  robots: {
+    index: false,
+    follow: true,
+    googleBot: { index: false, follow: true },
+  },
   verification: { google: 'QXqAI47-3tV4BMAg_aGRiubKJmMhGAjUFdkqhCLgl2I' },
 };
 

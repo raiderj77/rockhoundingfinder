@@ -125,6 +125,16 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
+      <div style={{ background: '#1e1b4b', borderBottom: '3px solid #f59e0b', padding: '0.875rem 1.5rem', textAlign: 'center', fontSize: '0.875rem' }}>
+        <strong style={{ color: '#f59e0b' }}>This directory is paused for editorial enrichment.</strong>{' '}
+        Visit our active sites:{' '}
+        <a href="https://soakusa.net" style={{ color: '#93c5fd', textDecoration: 'underline' }}>soakusa.net</a>
+        {' | '}
+        <a href="https://publicboatramps.com" style={{ color: '#93c5fd', textDecoration: 'underline' }}>publicboatramps.com</a>
+        {' | '}
+        <a href="https://fibertools.app" style={{ color: '#93c5fd', textDecoration: 'underline' }}>fibertools.app</a>
+      </div>
+
       {/* Hero */}
       <section style={{ position: 'relative', background: 'linear-gradient(160deg, var(--earth) 0%, #1a0c08 50%, #0d1a1a 100%)', overflow: 'hidden', padding: '7rem 1.5rem 8rem' }}>
         <div aria-hidden style={{ position: 'absolute', inset: 0, backgroundImage: 'repeating-linear-gradient(160deg, transparent 0px, transparent 60px, rgba(196,82,26,0.03) 60px, rgba(196,82,26,0.03) 62px, transparent 62px, transparent 130px, rgba(26,122,122,0.04) 130px, rgba(26,122,122,0.04) 132px)', pointerEvents: 'none' }} />
