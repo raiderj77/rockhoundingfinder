@@ -106,6 +106,59 @@ export default function PrivacyPage() {
         information to third parties.
       </p>
 
+      <h2 style={{ color: brandColor, marginTop: "2rem" }}>
+        Maryland Online Data Privacy Act (MODPA) Compliance
+      </h2>
+      <p style={{ lineHeight: "1.8" }}>
+        Effective April 1, 2026, Rockhounding Finder complies with the Maryland
+        Online Data Privacy Act (MODPA). As a resident of Maryland, you have the
+        following rights:
+      </p>
+      <ul style={{ lineHeight: "2" }}>
+        <li>
+          <strong>Right to Access:</strong> You have the right to access your
+          personal data that we collect and maintain.
+        </li>
+        <li>
+          <strong>Right to Correct:</strong> You have the right to correct any
+          inaccurate or incomplete personal data we hold about you.
+        </li>
+        <li>
+          <strong>Right to Delete:</strong> You have the right to request deletion
+          of your personal data, subject to certain exceptions.
+        </li>
+        <li>
+          <strong>Right to Opt-Out of Sales and Targeted Advertising:</strong> You
+          have the right to opt out of the sale of your personal data and targeted
+          advertising. This website does not sell personal data.
+        </li>
+        <li>
+          <strong>Right to Data Portability:</strong> You have the right to
+          request a copy of your personal data in a portable format.
+        </li>
+      </ul>
+      <p style={{ lineHeight: "1.8", marginTop: "1rem" }}>
+        <strong>Global Privacy Control (GPC):</strong> This website honors the
+        Global Privacy Control (GPC) signal as a universal opt-out mechanism for
+        targeted advertising and analytics processing. When GPC is enabled in your
+        browser or browser extension, we will treat this as a valid request to
+        opt-out of these services.
+      </p>
+      <p style={{ lineHeight: "1.8", marginTop: "1rem" }}>
+        <strong>Response Timeframe:</strong> We will respond to consumer rights
+        requests within 45 days of receiving a complete request.
+      </p>
+      <p style={{ lineHeight: "1.8", marginTop: "1rem" }}>
+        <strong>Data Not Sold:</strong> Rockhounding Finder does not sell personal
+        data to third parties.
+      </p>
+      <p style={{ lineHeight: "1.8", marginTop: "1rem" }}>
+        To exercise any of these rights, please contact us at:
+      </p>
+      <p>
+        <strong>Email:</strong> privacy@rockhoundingfinder.com
+      </p>
+
       <h2 style={{ color: brandColor, marginTop: "2rem" }}>Security</h2>
       <p style={{ lineHeight: "1.8" }}>
         We implement appropriate security measures to protect your information
