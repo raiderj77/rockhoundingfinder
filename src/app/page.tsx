@@ -40,7 +40,7 @@ const websiteSchema = {
   '@type': 'WebSite',
   url: 'https://rockhoundingfinder.com',
   name: 'Rockhounding Finder',
-  dateModified: '2026-04-07',
+  dateModified: new Date().toISOString().substring(0,10),
   potentialAction: {
     '@type': 'SearchAction',
     target: { '@type': 'EntryPoint', urlTemplate: 'https://rockhoundingfinder.com/search?q={search_term_string}' },
@@ -54,7 +54,7 @@ const organizationSchema = {
   name: 'Rockhounding Finder',
   url: 'https://rockhoundingfinder.com',
   description: 'Directory of public rockhounding and gem hunting locations across the United States',
-  dateModified: '2026-04-07',
+  dateModified: new Date().toISOString().substring(0,10),
 };
 
 const localBusinessSchema = {
@@ -64,7 +64,7 @@ const localBusinessSchema = {
   url: 'https://rockhoundingfinder.com',
   description: 'Find public rockhounding sites, gem mines, and fossil hunting locations near you',
   areaServed: 'United States',
-  dateModified: '2026-04-07',
+  dateModified: new Date().toISOString().substring(0,10),
 };
 
 const faqSchema = {
