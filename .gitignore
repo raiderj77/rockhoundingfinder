@@ -6,6 +6,5 @@ out/
 .vercel
 
 # Empire — never commit
-CLAUDE.md
 EMPIRE_BUILD_STANDARDS.md
 .claude/settings.local.json
