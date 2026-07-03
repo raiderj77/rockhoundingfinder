@@ -9,12 +9,12 @@ function getMapboxImage(lat: number, lng: number, width = 800, height = 500): st
 }
 
 export const metadata: Metadata = {
-  title: 'Petrified Forest Park Gilmer TX — Rockhounding Texas Petrified Wood',
+  title: 'Petrified Forest Park Gilmer TX ,  Rockhounding Texas Petrified Wood',
   description:
-    'Find petrified wood and silicified specimens at Petrified Forest Park in Gilmer, Texas (Upshur County). Free public access, easy terrain — perfect for family rockhounding in East Texas.',
+    'Find petrified wood and silicified specimens at Petrified Forest Park in Gilmer, Texas (Upshur County). Free public access, easy terrain ,  perfect for family rockhounding in East Texas.',
   alternates: { canonical: 'https://rockhoundingfinder.com/texas/petrified-forest-park' },
   openGraph: {
-    title: 'Petrified Forest Park — Rockhounding for Petrified Wood in Texas',
+    title: 'Petrified Forest Park ,  Rockhounding for Petrified Wood in Texas',
     description:
       'Public rockhounding site in Gilmer, TX. Find petrified wood and silicified specimens in the East Texas Piney Woods. Free access, family friendly.',
     url: 'https://rockhoundingfinder.com/texas/petrified-forest-park',
@@ -76,7 +76,7 @@ const SCHEMAS = [
         name: 'What can I find rockhounding at Petrified Forest Park in Texas?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Petrified Forest Park in Gilmer, Texas is best known for petrified wood and silicified wood specimens. Collectors find pieces ranging from small fragments to larger log sections preserved over millions of years. The silicification process replaces organic plant material with silica minerals — often preserving original wood grain, growth rings, and bark textures in stunning detail. Colors range from earthy browns and tans to occasional reds and blacks depending on the mineral content.',
+          text: 'Petrified Forest Park in Gilmer, Texas is best known for petrified wood and silicified wood specimens. Collectors find pieces ranging from small fragments to larger log sections preserved over millions of years. The silicification process replaces organic plant material with silica minerals ,  often preserving original wood grain, growth rings, and bark textures in stunning detail. Colors range from earthy browns and tans to occasional reds and blacks depending on the mineral content.',
         },
       },
       {
@@ -119,15 +119,15 @@ const AMENITIES: { label: string; icon: string }[] = [
 const FAQS = [
   {
     q: 'What will I find at Petrified Forest Park?',
-    a: 'The park is known for petrified wood and silicified wood specimens — ancient logs and branches transformed by silica minerals over millions of years. Colors range from earthy browns and tans to occasional reds and grays depending on trace mineral content. Preservation quality varies widely: some pieces retain visible grain and ring patterns while others are more weathered fragments.',
+    a: 'The park is known for petrified wood and silicified wood specimens ,  ancient logs and branches transformed by silica minerals over millions of years. Colors range from earthy browns and tans to occasional reds and grays depending on trace mineral content. Preservation quality varies widely: some pieces retain visible grain and ring patterns while others are more weathered fragments.',
   },
   {
     q: 'Is collecting free and open to the public?',
-    a: 'Yes. Petrified Forest Park in Gilmer is a public park with free access and collecting permitted within posted guidelines. Always check current signage at the park for any limits on quantity or specimen size. Respect all posted rules and practice Leave No Trace — fill any holes, take only personal-use quantities, and leave the site as you found it.',
+    a: 'Yes. Petrified Forest Park in Gilmer is a public park with free access and collecting permitted within posted guidelines. Always check current signage at the park for any limits on quantity or specimen size. Respect all posted rules and practice Leave No Trace ,  fill any holes, take only personal-use quantities, and leave the site as you found it.',
   },
   {
     q: 'What should I bring for rockhounding here?',
-    a: 'Pack water, sunscreen, and sturdy closed-toe shoes — even on easy terrain, loose rock and roots can be hazardous. Bring a small rock hammer, chisel, and sturdy gloves for prying surface specimens. A hand lens (10× loupe) helps identify silicification quality. Bring paper bags or newspaper to wrap delicate pieces, and a field notebook to record where you found each specimen.',
+    a: 'Pack water, sunscreen, and sturdy closed-toe shoes ,  even on easy terrain, loose rock and roots can be hazardous. Bring a small rock hammer, chisel, and sturdy gloves for prying surface specimens. A hand lens (10× loupe) helps identify silicification quality. Bring paper bags or newspaper to wrap delicate pieces, and a field notebook to record where you found each specimen.',
   },
   {
     q: 'When is the best time of year to visit?',
@@ -309,7 +309,7 @@ export default function PetrifiedForestParkPage() {
                 public rockhounding destinations. Located in Upshur County in the heart of the Piney
                 Woods, this park preserves a remarkable geological record of ancient plant life
                 transformed into stone over millions of years. Collectors come specifically to find{' '}
-                <strong>petrified wood</strong> and <strong>silicified wood specimens</strong> —
+                <strong>petrified wood</strong> and <strong>silicified wood specimens</strong> , 
                 organic material replaced by silica minerals through a slow geochemical process that
                 preserves original structure in extraordinary detail.
               </p>
@@ -321,7 +321,7 @@ export default function PetrifiedForestParkPage() {
                 within the cellular structure of the wood, producing specimens that are chemically
                 identical to stone but structurally identical to the original tree. The result is{' '}
                 <strong>Texas petrified wood</strong> that sometimes retains visible grain lines,
-                growth rings, and even bark texture — a window into forests that existed long before
+                growth rings, and even bark texture ,  a window into forests that existed long before
                 humans walked the earth.
               </p>
 
@@ -352,7 +352,7 @@ export default function PetrifiedForestParkPage() {
               <p style={{ lineHeight: 1.85, marginBottom: '1.25rem', color: '#445' }}>
                 Beyond petrified wood, collectors in the broader Upshur County region occasionally
                 encounter <strong>silicified bark</strong> and pieces showing original knot
-                structures or branch junctions. Quality varies across the site — patience and
+                structures or branch junctions. Quality varies across the site ,  patience and
                 systematic searching of eroded slopes and stream-cut banks will yield the best
                 specimens. Surface collecting after rain is particularly productive, when fresh
                 erosion exposes new material.
@@ -425,7 +425,7 @@ export default function PetrifiedForestParkPage() {
                 productive: seasonal rains cause natural erosion that exposes fresh specimens, and
                 falling leaves open up visibility across the ground. Temperatures are comfortable for
                 extended searching. Spring offers mild weather and low humidity before the East Texas
-                summer arrives in force. Summer collecting is possible but demanding — plan early
+                summer arrives in force. Summer collecting is possible but demanding ,  plan early
                 morning starts and bring twice the water you think you need. Winter visits work well
                 on dry days; bare deciduous trees actually improve ground visibility significantly.
               </p>
@@ -634,7 +634,7 @@ export default function PetrifiedForestParkPage() {
               </div>
             </div>
 
-            {/* Right — sticky sidebar */}
+            {/* Right ,  sticky sidebar */}
             <aside style={{ position: 'sticky', top: '5.5rem' }}>
               <div
                 style={{
@@ -678,8 +678,8 @@ export default function PetrifiedForestParkPage() {
                     { label: 'Location', value: 'Gilmer, Texas' },
                     { label: 'County', value: 'Upshur County' },
                     { label: 'Coordinates', value: `${LAT.toFixed(4)}°N, ${Math.abs(LNG).toFixed(4)}°W` },
-                    { label: 'Access', value: 'Free — public park' },
-                    { label: 'Difficulty', value: 'Easy — family friendly' },
+                    { label: 'Access', value: 'Free ,  public park' },
+                    { label: 'Difficulty', value: 'Easy ,  family friendly' },
                     { label: 'Best seasons', value: 'Fall & Spring' },
                     { label: 'Finds', value: 'Petrified wood, silicified wood' },
                   ].map(({ label, value }) => (
@@ -784,7 +784,7 @@ export default function PetrifiedForestParkPage() {
         </div>
       </section>
 
-      {/* Internal links — Texas state page */}
+      {/* Internal links ,  Texas state page */}
       <section
         style={{
           background: 'var(--cream)',

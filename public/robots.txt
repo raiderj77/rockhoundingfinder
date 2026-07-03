@@ -26,7 +26,7 @@ Disallow: /
 User-agent: DotBot
 Disallow: /
 
-# Default rule — paused for editorial investment
+# Default rule ,  paused for editorial investment
 User-agent: *
 Disallow: /
 Allow: /robots.txt

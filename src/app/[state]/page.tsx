@@ -125,7 +125,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             <div style={{ textAlign: 'center', padding: '5rem 2rem', background: 'var(--white)', borderRadius: 'var(--radius)', boxShadow: 'var(--shadow-card)' }}>
               <p style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🪨</p>
               <h2 style={{ fontFamily: 'var(--font-display)', color: 'var(--earth)', marginBottom: '0.75rem', fontSize: '2rem', letterSpacing: '0.04em' }}>COMING SOON</h2>
-              <p style={{ color: 'var(--gray)', fontFamily: 'var(--font-body)' }}>{"We're mapping rockhounding sites in "}{stateName}{" — check back soon!"}</p>
+              <p style={{ color: 'var(--gray)', fontFamily: 'var(--font-body)' }}>{"We're mapping rockhounding sites in "}{stateName}{" ,  check back soon!"}</p>
               <Link href="/" className="btn btn-rust" style={{ display: 'inline-flex', marginTop: '1.5rem' }}>Browse Other States</Link>
             </div>
           )}

@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const loc = locations.find((l) => l.slug === slug);
   if (!loc) return {};
   return {
-    title: `${loc.name} — Rockhounding Site in ${loc.state}`,
+    title: `${loc.name} ,  Rockhounding Site in ${loc.state}`,
     description: `${loc.description.slice(0, 155)}`,
     alternates: { canonical: `https://rockhoundingfinder.com/${loc.stateSlug}/${loc.slug}` },
   };
@@ -131,7 +131,7 @@ export default async function SitePage({ params }: { params: Promise<{ state: st
               </div>
             </div>
 
-            {/* Right — sticky panel */}
+            {/* Right ,  sticky panel */}
             <aside style={{ position: 'sticky', top: '5.5rem' }}>
               <div style={{ background: 'var(--white)', borderRadius: 'var(--radius)', boxShadow: 'var(--shadow-card)', overflow: 'hidden', border: '1px solid rgba(196,82,26,0.12)' }}>
                 <div style={{ background: 'var(--earth)', padding: '1.25rem 1.5rem', borderBottom: '3px solid var(--rust)' }}>

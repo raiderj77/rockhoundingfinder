@@ -8,7 +8,7 @@ const oswald = Oswald({ subsets: ['latin'], variable: '--font-display', display:
 const sourceSans = Source_Sans_3({ subsets: ['latin'], variable: '--font-body', display: 'swap', weight: ['400','600','700'] });
 
 export const metadata: Metadata = {
-  title: { template: '%s | Rockhounding Finder', default: 'Rockhounding Finder — Find Rock & Mineral Sites Across America' },
+  title: { template: '%s | Rockhounding Finder', default: 'Rockhounding Finder ,  Find Rock & Mineral Sites Across America' },
   description: 'Discover the best rockhounding sites across the United States. Find gems, minerals, fossils, and crystals with GPS coordinates and site details.',
   keywords: 'rockhounding, gem hunting, mineral collecting, fossil sites, crystal hunting, rockhounding near me',
   metadataBase: new URL('https://rockhoundingfinder.com'),

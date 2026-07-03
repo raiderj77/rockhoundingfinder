@@ -6,7 +6,7 @@ import locations from '@/data/locations.json';
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: 'Rockhounding Finder — Discover Gem & Mineral Sites Across America',
+  title: 'Rockhounding Finder ,  Discover Gem & Mineral Sites Across America',
   description: 'Find the best rockhounding sites near you. Gems, crystals, minerals, and fossils across all 50 states with GPS coordinates and collecting tips.',
 };
 
@@ -84,7 +84,7 @@ const faqSchema = {
       name: 'Is rockhounding legal on public land?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Casual collecting of rocks, minerals, and common invertebrate fossils is generally permitted on Bureau of Land Management (BLM) land for personal non-commercial use, typically up to 25 pounds per day. National Parks prohibit all collecting. State parks and National Forests have varying rules — always check with the managing agency before collecting.',
+        text: 'Casual collecting of rocks, minerals, and common invertebrate fossils is generally permitted on Bureau of Land Management (BLM) land for personal non-commercial use, typically up to 25 pounds per day. National Parks prohibit all collecting. State parks and National Forests have varying rules ,  always check with the managing agency before collecting.',
       },
     },
     {
@@ -100,7 +100,7 @@ const faqSchema = {
       name: 'What minerals and gems can I find rockhounding in the United States?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The U.S. offers exceptional variety — agates and thunder eggs in Oregon, garnets in Idaho, turquoise in Nevada and Arizona, sapphires in Montana, quartz crystals in Arkansas, amethyst in Texas, and fossils across the Great Plains and desert Southwest. Each region has signature finds tied to its geology.',
+        text: 'The U.S. offers exceptional variety ,  agates and thunder eggs in Oregon, garnets in Idaho, turquoise in Nevada and Arizona, sapphires in Montana, quartz crystals in Arkansas, amethyst in Texas, and fossils across the Great Plains and desert Southwest. Each region has signature finds tied to its geology.',
       },
     },
     {
@@ -108,7 +108,7 @@ const faqSchema = {
       name: 'Do I need a permit to go rockhounding?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Permit requirements vary by land management agency and site. BLM land typically requires no permit for casual personal collecting. Some fee-dig operations require paid admission. National Parks prohibit all collecting. State-specific rules vary — always verify with the local BLM field office or land manager before your trip.',
+        text: 'Permit requirements vary by land management agency and site. BLM land typically requires no permit for casual personal collecting. Some fee-dig operations require paid admission. National Parks prohibit all collecting. State-specific rules vary ,  always verify with the local BLM field office or land manager before your trip.',
       },
     },
   ],
@@ -146,7 +146,7 @@ export default function Home() {
             FIND ROCKHOUNDING<br /><span style={{ color: 'var(--rust-lt)' }}>SITES</span> ACROSS AMERICA
           </h1>
           <p className="anim-fade-up anim-delay-2" style={{ fontSize: '1.05rem', color: '#c0a090', marginBottom: '2.75rem', maxWidth: '500px', margin: '0 auto 2.75rem', fontFamily: 'var(--font-body)', lineHeight: 1.65 }}>
-            Gems, crystals, agates, fossils &amp; minerals — {locations.length}+ collecting sites with GPS coordinates.
+            Gems, crystals, agates, fossils &amp; minerals ,  {locations.length}+ collecting sites with GPS coordinates.
           </p>
           <div className="anim-fade-up anim-delay-3" style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center', marginTop: '2rem' }}>
             <a href="/texas" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.85rem 2rem', borderRadius: '6px', fontWeight: 700, fontSize: '0.95rem', background: 'var(--rust)', color: 'white', textDecoration: 'none', transition: 'background 0.2s' }}>Find Rockhounding Sites →</a>
@@ -210,9 +210,9 @@ export default function Home() {
           </div>
           <div className="grid-3">
             {[
-              { icon:'🗺️', title:'BROWSE BY STATE', desc:'Pick your state to explore every documented rockhounding site — with mineral types, access info, and GPS.' },
+              { icon:'🗺️', title:'BROWSE BY STATE', desc:'Pick your state to explore every documented rockhounding site ,  with mineral types, access info, and GPS.' },
               { icon:'💎', title:'CHECK THE SITE', desc:'Review the minerals you can find, what tools to bring, site rules, and any permit requirements.' },
-              { icon:'🪨', title:'GO COLLECTING', desc:"Get directions and head out. Bring a rock hammer, gloves, and a bag — America's geology awaits." },
+              { icon:'🪨', title:'GO COLLECTING', desc:"Get directions and head out. Bring a rock hammer, gloves, and a bag ,  America's geology awaits." },
             ].map(({icon,title,desc}) => (
               <div key={title} style={{ textAlign: 'center', padding: '2rem 1.5rem', background: 'rgba(255,255,255,0.04)', borderRadius: 'var(--radius)', border: '1px solid rgba(196,82,26,0.2)' }}>
                 <div className="step-icon">{icon}</div>
@@ -249,7 +249,7 @@ export default function Home() {
             },
             {
               q: 'Is rockhounding legal on public land?',
-              a: 'Casual collecting of rocks, minerals, and common invertebrate fossils is generally permitted on Bureau of Land Management (BLM) land for personal non-commercial use, typically up to 25 pounds per day. National Parks prohibit all collecting. State parks and National Forests have varying rules — always check with the managing agency before collecting.',
+              a: 'Casual collecting of rocks, minerals, and common invertebrate fossils is generally permitted on Bureau of Land Management (BLM) land for personal non-commercial use, typically up to 25 pounds per day. National Parks prohibit all collecting. State parks and National Forests have varying rules ,  always check with the managing agency before collecting.',
             },
             {
               q: 'What tools do I need for rockhounding?',
@@ -257,11 +257,11 @@ export default function Home() {
             },
             {
               q: 'What minerals and gems can I find rockhounding in the United States?',
-              a: 'The U.S. offers exceptional variety — agates and thunder eggs in Oregon, garnets in Idaho, turquoise in Nevada and Arizona, sapphires in Montana, quartz crystals in Arkansas, amethyst in Texas, and fossils across the Great Plains and desert Southwest. Each region has signature finds tied to its geology.',
+              a: 'The U.S. offers exceptional variety ,  agates and thunder eggs in Oregon, garnets in Idaho, turquoise in Nevada and Arizona, sapphires in Montana, quartz crystals in Arkansas, amethyst in Texas, and fossils across the Great Plains and desert Southwest. Each region has signature finds tied to its geology.',
             },
             {
               q: 'Do I need a permit to go rockhounding?',
-              a: 'Permit requirements vary by land management agency and site. BLM land typically requires no permit for casual personal collecting. Some fee-dig operations require paid admission. National Parks prohibit all collecting. State-specific rules vary — always verify with the local BLM field office or land manager before your trip.',
+              a: 'Permit requirements vary by land management agency and site. BLM land typically requires no permit for casual personal collecting. Some fee-dig operations require paid admission. National Parks prohibit all collecting. State-specific rules vary ,  always verify with the local BLM field office or land manager before your trip.',
             },
           ].map(({q,a}) => (
             <details key={q} className="faq-item">
@@ -278,7 +278,7 @@ export default function Home() {
 
           <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.85rem', color: 'var(--earth)', marginBottom: '0.75rem', letterSpacing: '0.04em' }}>How to Plan Your First Rockhounding Trip</h2>
           <p style={{ lineHeight: 1.85, marginBottom: '1rem', fontWeight: 600, color: 'var(--earth)' }}>
-            Research what minerals are found in your target area, verify collecting rules with the land management agency, and pack the right tools — a rock hammer, safety glasses, and sturdy boots are the minimum kit.
+            Research what minerals are found in your target area, verify collecting rules with the land management agency, and pack the right tools ,  a rock hammer, safety glasses, and sturdy boots are the minimum kit.
           </p>
           <p style={{ lineHeight: 1.85, marginBottom: '1rem' }}>
             Start by identifying your target region using geological survey maps from the USGS, which show rock formations and mineral deposit types by area. The BLM&apos;s surface management maps let you confirm whether land is open to casual collecting before you drive out. There are over 10,000 documented rockhounding sites across the United States on public and fee-access land, so narrowing by state and mineral type is the most efficient first step.
@@ -295,15 +295,15 @@ export default function Home() {
             Oregon is famous for its thunder eggs (the state rock) and agate beaches along the coast. Montana produces world-class sapphires from alluvial deposits near Philipsburg and Yogo Gulch. Arizona offers turquoise, petrified wood, and fire agates across its desert terrain. Arkansas hosts the only public diamond mine in North America alongside exceptional quartz crystal deposits near Mount Ida.
           </p>
           <p style={{ lineHeight: 1.85, marginBottom: '3rem' }}>
-            The United States has over 1 billion acres of public land managed by federal agencies including the BLM, Forest Service, and National Park Service — much of it geologically rich and open to casual mineral collecting. The western states contain the highest concentration of accessible BLM land where collecting is routinely permitted.
+            The United States has over 1 billion acres of public land managed by federal agencies including the BLM, Forest Service, and National Park Service ,  much of it geologically rich and open to casual mineral collecting. The western states contain the highest concentration of accessible BLM land where collecting is routinely permitted.
           </p>
 
           <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.85rem', color: 'var(--earth)', marginBottom: '0.75rem', letterSpacing: '0.04em' }}>What Is the Difference Between Rockhounding on BLM Land Versus National Parks?</h2>
           <p style={{ lineHeight: 1.85, marginBottom: '1rem', fontWeight: 600, color: 'var(--earth)' }}>
-            BLM land generally allows casual personal collecting of rocks and minerals. National Parks prohibit all collecting — even picking up a pebble is a federal violation.
+            BLM land generally allows casual personal collecting of rocks and minerals. National Parks prohibit all collecting ,  even picking up a pebble is a federal violation.
           </p>
           <p style={{ lineHeight: 1.85, marginBottom: '1rem' }}>
-            The BLM&apos;s casual use policy allows individuals to collect up to 25 pounds of rocks, minerals, and common invertebrate fossils per day for personal non-commercial use on most BLM-managed land, with no permit required. Vertebrate fossils and meteorites are excluded and require a permit regardless of land type. National Forests fall between the two extremes — collecting rules vary by district, and some areas require a free permit even for personal collecting.
+            The BLM&apos;s casual use policy allows individuals to collect up to 25 pounds of rocks, minerals, and common invertebrate fossils per day for personal non-commercial use on most BLM-managed land, with no permit required. Vertebrate fossils and meteorites are excluded and require a permit regardless of land type. National Forests fall between the two extremes ,  collecting rules vary by district, and some areas require a free permit even for personal collecting.
           </p>
           <p style={{ lineHeight: 1.85, marginBottom: '3rem' }}>
             Always check with the local field office before collecting. The BLM manages 245 million acres of public land across 12 western states, and rules can vary significantly between districts even within the same state.
@@ -314,7 +314,7 @@ export default function Home() {
             Test hardness using the Mohs scale, observe crystal structure and luster, check streak color on unglazed porcelain, and note specific gravity. A field guide to rocks and minerals for your region is an essential companion.
           </p>
           <p style={{ lineHeight: 1.85, marginBottom: '1rem' }}>
-            Smartphone mineral identification apps such as Rock Identifier and iRocks provide a useful starting point for field ID, though accuracy varies with specimen quality and photo conditions. For confident identification of unusual or potentially valuable finds, joining a local gem and mineral club is invaluable — experienced collectors can identify specimens in seconds and share knowledge about regional geology that no app can replicate. The gem and mineral hobby attracts an estimated 1.5 million active collectors in the United States, according to the American Federation of Mineralogical Societies.
+            Smartphone mineral identification apps such as Rock Identifier and iRocks provide a useful starting point for field ID, though accuracy varies with specimen quality and photo conditions. For confident identification of unusual or potentially valuable finds, joining a local gem and mineral club is invaluable ,  experienced collectors can identify specimens in seconds and share knowledge about regional geology that no app can replicate. The gem and mineral hobby attracts an estimated 1.5 million active collectors in the United States, according to the American Federation of Mineralogical Societies.
           </p>
 
           <div style={{ marginTop: '3rem', padding: '1.5rem 2rem', background: 'var(--cream)', borderRadius: 'var(--radius)', borderLeft: '4px solid var(--rust)' }}>
@@ -322,7 +322,7 @@ export default function Home() {
             <ul style={{ lineHeight: 2.2, listStyle: 'none', padding: 0, margin: 0 }}>
               <li>
                 <a href="https://www.blm.gov/programs/recreation/permits-and-passes/lotteries-and-permit-systems/recreational-mineral-collecting" rel="nofollow noopener noreferrer" target="_blank" style={{ color: 'var(--rust)', textDecoration: 'underline', fontSize: '0.95rem' }}>
-                  Bureau of Land Management — Recreational Mineral Collecting
+                  Bureau of Land Management ,  Recreational Mineral Collecting
                 </a>
               </li>
               <li>

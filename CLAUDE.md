@@ -1,4 +1,4 @@
-﻿# Rockhounding Finder — CLAUDE.md
+﻿# Rockhounding Finder ,  CLAUDE.md
 
 > Source of truth for Claude Code on this project. Last updated: 2026-04-30
 
@@ -18,13 +18,13 @@
 
 - **Publisher ID**: `ca-pub-7171402107622932`
 - **ads.txt**: `google.com, pub-7171402107622932, DIRECT, f08c47fec0942fa0`
-- Amazon Associates (ytearnings-20) for gear recommendations — use rel="nofollow sponsored"
+- Amazon Associates (ytearnings-20) for gear recommendations ,  use rel="nofollow sponsored"
 
 ## 2. SEO
 
 - SSR/SSG required
 - Each site page: location name, GPS coordinates, land management agency, minerals/gems found, access notes, permit requirements
-- CRITICAL: Always note land management agency (BLM, USFS, State, Private) — collecting rules differ by jurisdiction
+- CRITICAL: Always note land management agency (BLM, USFS, State, Private) ,  collecting rules differ by jurisdiction
 
 ## 3. Core Web Vitals
 
@@ -32,13 +32,13 @@
 
 ## 4. E-E-A-T
 
-- Attribution: "Built by an experienced web developer" — no personal name
+- Attribution: "Built by an experienced web developer" ,  no personal name
 - IMPORTANT: "Always verify collecting regulations with the managing agency before visiting. Rules and access can change."
 
 ## 5. Structured Data
 
 - Organization, WebSite, Place (for natural sites), BreadcrumbList
-- Include geo coordinates in schema — rockhounders rely on precise GPS
+- Include geo coordinates in schema ,  rockhounders rely on precise GPS
 
 ## 6. Mobile-First
 

@@ -120,7 +120,7 @@ export default function AboutPage() {
           Why Rockhounding Matters
         </h2>
         <p style={{ lineHeight: "1.8" }}>
-          Rockhounding is more than just a hobby — it's a way to connect with
+          Rockhounding is more than just a hobby ,  it's a way to connect with
           Earth's geological history, develop a deeper appreciation for minerals
           and gems, and enjoy outdoor exploration. Whether you're collecting for
           display, learning about geology, or simply seeking adventure, rockhounding
