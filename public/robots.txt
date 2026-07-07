@@ -16,6 +16,19 @@ Crawl-delay: 1
 User-agent: DuckDuckBot
 Allow: /
 
+# AI crawlers (Empire Standard, GEO visibility)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 # Block commercial scrapers
 User-agent: AhrefsBot
 Disallow: /
