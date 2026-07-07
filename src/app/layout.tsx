@@ -77,6 +77,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
         <footer style={{ background: 'var(--earth)', borderTop: '3px solid var(--earth-mid)', marginTop: '5rem', padding: '3rem 0 2rem' }}>
           <div className="container">
+            <p style={{ color: '#8a6a5a', fontSize: '0.9rem', fontWeight: 600, marginBottom: '1.5rem' }}>More from our network</p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem', marginBottom: '2.5rem' }}>
               <div>
                 <p style={{ fontFamily: 'var(--font-display)', color: 'var(--rust-lt)', fontWeight: 600, fontSize: '1.15rem', letterSpacing: '0.05em', marginBottom: '0.75rem' }}>🪨 ROCKHOUNDING FINDER</p>
