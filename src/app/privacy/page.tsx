@@ -17,7 +17,7 @@ export default function PrivacyPage() {
       <h1 style={{ color: brandColor }}>Privacy Policy</h1>
 
       <p style={{ lineHeight: "1.8" }}>
-        <strong>Last Updated:</strong> April 2026
+        <strong>Last Updated:</strong> July 13, 2026
       </p>
 
       <h2 style={{ color: brandColor, marginTop: "2rem" }}>Introduction</h2>
@@ -45,8 +45,8 @@ export default function PrivacyPage() {
           type, pages visited, and time spent on our site.
         </li>
         <li>
-          <strong>Cookies and Tracking Technologies:</strong> We use cookies to
-          enhance your experience and serve relevant advertisements.
+          <strong>Optional tracking:</strong> Google AdSense, Google Analytics,
+          and Microsoft Clarity are not currently enabled.
         </li>
       </ul>
 
@@ -59,51 +59,30 @@ export default function PrivacyPage() {
       <ul style={{ lineHeight: "2" }}>
         <li>Respond to your inquiries and provide customer support</li>
         <li>Improve our website and services</li>
-        <li>Display personalized content and advertisements</li>
-        <li>Monitor and analyze trends and usage</li>
+        <li>Maintain reliability and protect the Site from abuse</li>
         <li>Comply with legal obligations</li>
       </ul>
 
       <h2 style={{ color: brandColor, marginTop: "2rem" }}>
-        Cookies and Advertising
+        Cookies, Analytics, and Advertising
       </h2>
       <p style={{ lineHeight: "1.8" }}>
-        We work with third-party advertising partners, including Google, who may
-        use cookies to serve ads based on your prior visits to this website or
-        other websites. Google&apos;s use of advertising cookies enables it and
-        its partners to serve ads to you based on your visit to our site and/or
-        other sites on the internet.
+        The Site does not currently load advertising or optional analytics
+        scripts and does not set their cookies. A publisher identifier may remain
+        in ads.txt or public metadata solely for ownership verification.
       </p>
       <p style={{ lineHeight: "1.8", marginTop: "1rem" }}>
-        You may opt out of personalized advertising by visiting{" "}
-        <a
-          href="https://ads.google.com/settings"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ color: brandColor }}
-        >
-          Google&apos;s Ad Settings
-        </a>{" "}
-        or the{" "}
-        <a
-          href="https://optout.aboutads.info"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ color: brandColor }}
-        >
-          Digital Advertising Alliance opt-out page
-        </a>
-        .
+        If these services are enabled later, we will update this policy and add
+        any consent and opt-out controls required before activation.
       </p>
 
       <h2 style={{ color: brandColor, marginTop: "2rem" }}>
         Third-Party Disclosure
       </h2>
       <p style={{ lineHeight: "1.8" }}>
-        We may share information with third-party service providers who assist
-        us in operating our website and conducting our business. This includes
-        Google AdSense for advertising purposes. We do not sell your personal
-        information to third parties.
+        Hosting and security providers may process limited request metadata to
+        deliver and protect the Site. We do not sell personal information, and
+        Google AdSense is not currently enabled.
       </p>
 
       <h2 style={{ color: brandColor, marginTop: "2rem" }}>
@@ -138,11 +117,9 @@ export default function PrivacyPage() {
         </li>
       </ul>
       <p style={{ lineHeight: "1.8", marginTop: "1rem" }}>
-        <strong>Global Privacy Control (GPC):</strong> This website honors the
-        Global Privacy Control (GPC) signal as a universal opt-out mechanism for
-        targeted advertising and analytics processing. When GPC is enabled in your
-        browser or browser extension, we will treat this as a valid request to
-        opt-out of these services.
+        <strong>Global Privacy Control (GPC):</strong> The Site does not currently
+        sell personal data or run targeted advertising. If opt-out processing is
+        introduced later, applicable GPC signals will be honored.
       </p>
       <p style={{ lineHeight: "1.8", marginTop: "1rem" }}>
         <strong>Response Timeframe:</strong> We will respond to consumer rights

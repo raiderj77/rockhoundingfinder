@@ -16,7 +16,7 @@ const nextConfig: NextConfig = {
         {
           key: "Content-Security-Policy",
           value:
-            "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' pagead2.googlesyndication.com; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; connect-src 'self' pagead2.googlesyndication.com; frame-src pagead2.googlesyndication.com;",
+            "default-src 'self'; script-src 'self' 'unsafe-inline'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; connect-src 'self'; frame-src 'self';",
         },
         {
           key: "Referrer-Policy",
