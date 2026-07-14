@@ -12,9 +12,9 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://rockhoundingfinder.com'),
   alternates: { canonical: 'https://rockhoundingfinder.com' },
   robots: {
-    index: false,
+    index: true,
     follow: true,
-    googleBot: { index: false, follow: true },
+    googleBot: { index: true, follow: true },
   },
   verification: { google: 'QXqAI47-3tV4BMAg_aGRiubKJmMhGAjUFdkqhCLgl2I' },
 };
