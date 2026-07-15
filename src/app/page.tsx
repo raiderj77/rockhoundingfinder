@@ -160,7 +160,7 @@ export default function Home() {
 
       {/* Stats */}
       <section style={{ background: 'var(--white)', borderBottom: '1px solid rgba(196,82,26,0.1)' }}>
-        <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)' }}>
+        <div className="container stats-grid">
           {[
             { n:`${locations.length}+`, l:'Collecting Sites' },
             { n:`${statesWithData}`, l:'States Covered' },
