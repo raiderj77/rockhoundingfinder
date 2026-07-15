@@ -41,12 +41,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <header style={{ background: 'var(--earth)', borderBottom: '3px solid var(--rust)', position: 'sticky', top: 0, zIndex: 1000, boxShadow: '0 2px 20px rgba(44,24,16,0.5)' }}>
-          <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.9rem 1.5rem' }}>
-            <a href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+          <div className="container site-header-inner" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.9rem 1.5rem' }}>
+            <a href="/" className="site-brand" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
               <span style={{ fontSize: '1.5rem', lineHeight: 1 }}>🪨</span>
               <span style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: '1.25rem', color: 'var(--rust-lt)', letterSpacing: '0.05em' }}>ROCKHOUNDING FINDER</span>
             </a>
-            <nav style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+            <nav className="site-nav" style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
               <a href="/" style={{ color: 'var(--rust-pale)', fontSize: '0.88rem', fontWeight: 600, textDecoration: 'none', fontFamily: 'var(--font-body)', letterSpacing: '0.04em' }}>Home</a>
               <a href="/browse-states" style={{ color: 'var(--rust-pale)', fontSize: '0.88rem', fontWeight: 600, textDecoration: 'none', fontFamily: 'var(--font-body)', letterSpacing: '0.04em' }}>Browse</a>
               <a href="/about" style={{ color: 'var(--rust-pale)', fontSize: '0.88rem', fontWeight: 600, textDecoration: 'none', fontFamily: 'var(--font-body)', letterSpacing: '0.04em' }}>About</a>
