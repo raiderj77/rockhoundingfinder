@@ -113,6 +113,11 @@ img { max-width: 100%; height: auto; }
 @media (max-width: 900px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 640px) {
   .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .site-header-inner { gap: 0.75rem; padding-left: 1rem !important; padding-right: 1rem !important; }
+  .site-brand { gap: 0.35rem !important; min-width: 0; }
+  .site-brand span:last-child { font-size: 0.95rem !important; letter-spacing: 0.02em !important; }
+  .site-nav { gap: 0.75rem !important; }
+  .site-nav a { font-size: 0.75rem !important; letter-spacing: 0 !important; }
   .grid-3, .grid-2 { grid-template-columns: 1fr; }
   .search-wrap { border-radius: 10px; flex-direction: column; }
   .section-title { font-size: 1.7rem; }
