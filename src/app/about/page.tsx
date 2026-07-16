@@ -53,8 +53,8 @@ export default function AboutPage() {
             digging experiences
           </li>
           <li>
-            <strong>Natural Sites:</strong> Rivers, beaches, and geological
-            formations open to public rockhounding
+            <strong>Legacy Records:</strong> Mineral occurrences and historical
+            locality data awaiting current ownership and access review
           </li>
         </ul>
       </section>
@@ -64,26 +64,26 @@ export default function AboutPage() {
           Data Sources
         </h2>
         <p style={{ lineHeight: "1.8" }}>
-          Our location data is compiled from multiple authoritative sources:
+          The legacy directory does not yet store a structured source trail for each record. Destination pages remain out of search while we add:
         </p>
         <ul style={{ lineHeight: "2" }}>
           <li>
-            Official rockhounding site operators and gem mine websites
+            The current land manager or site operator
           </li>
           <li>
-            Bureau of Land Management (BLM) rockhounding areas
+            Current ownership and active-claim checks
           </li>
           <li>
-            U.S. Forest Service recreation guides
+            A primary-source collecting rule or permit page
           </li>
           <li>
-            State geological surveys and park authorities
+            A dated access and closure check
           </li>
           <li>
-            Community rockhounding groups and forums
+            Source links that readers can inspect directly
           </li>
           <li>
-            Personal verification and site visits
+            A clear distinction between a mineral record and a public collecting site
           </li>
         </ul>
       </section>

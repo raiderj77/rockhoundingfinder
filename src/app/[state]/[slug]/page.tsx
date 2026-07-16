@@ -42,7 +42,7 @@ function getRockhoundPreview(d: { name: string; state: string; city: string; ame
   if (amenityCount >= 2) {
     return `Rockhounding site in ${location} with ${d.amenities.slice(0, 2).join(' and ').toLowerCase()}.`;
   }
-  return `Public rockhounding site in ${location}. Open for collecting.`;
+  return `Mapped mineral record in ${location}. Verify ownership, access, and collecting rules before visiting.`;
 }
 
 export default async function SitePage({ params }: { params: Promise<{ state: string; slug: string }> }) {
@@ -89,9 +89,8 @@ export default async function SitePage({ params }: { params: Promise<{ state: st
             <div>
               <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.7rem', color: 'var(--earth)', marginBottom: '1rem', letterSpacing: '0.04em' }}>ABOUT THIS SITE</h2>
               <p style={{ lineHeight: 1.85, marginBottom: '1.5rem', color: '#445' }}>
-                {loc.name} is a rockhounding site located in {loc.city ? `${loc.city}, ` : ''}{loc.state}.{' '}
-                {loc.amenities.length > 0 ? `Collectors can find ${loc.amenities.slice(0, 2).join(' and ').toLowerCase()}.` : 'Open for public rock and mineral collecting.'}{' '}
-                GPS coordinates provided for navigation to the site.
+                {loc.name} is a mapped mineral record in {loc.city ? `${loc.city}, ` : ''}{loc.state}.{' '}
+                The record does not establish current public access or permission to collect. Verify ownership, land-manager rules, active mining claims, and the accuracy of the coordinates before considering a visit.
               </p>
 
               {loc.amenities.length > 0 && (

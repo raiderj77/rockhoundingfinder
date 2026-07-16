@@ -32,6 +32,26 @@ test('the sitemap contains only an explicit allowlist', () => {
   assert.doesNotMatch(sitemap, /data\/locations|locations\.map|statePages|locationPages|parkPages/);
   assert.match(sitemap, /'\/about'/);
   assert.match(sitemap, /'\/contact'/);
+  assert.doesNotMatch(sitemap, /petrified-forest-park/);
+});
+
+test('the unsupported Gilmer destination is permanently retired', () => {
+  const retired = read('src/app/texas/petrified-forest-park/page.tsx');
+  assert.match(retired, /permanentRedirect\('\/'\)/);
+  assert.doesNotMatch(retired, /free access|collecting permitted|publicAccess/i);
+});
+
+test('public copy does not turn legacy mineral records into collecting permission', () => {
+  const homepage = read('src/app/page.tsx');
+  assert.match(homepage, /mineral occurrence or old mining record does not prove/i);
+  assert.match(homepage, /blm\.gov\/programs\/recreation\/rockhounding/);
+  assert.doesNotMatch(homepage, /1\.5 million|1 billion acres|top-rated|Public rockhounding site/i);
+
+  for (const path of ['src/app/[state]/page.tsx', 'src/app/[state]/[slug]/page.tsx']) {
+    const source = read(path);
+    assert.doesNotMatch(source, /Open for collecting|Open for public rock|Public rockhounding site/i);
+    assert.match(source, /Verify ownership/);
+  }
 });
 
 test('Googlebot can crawl pages to observe route-level noindex rules', () => {

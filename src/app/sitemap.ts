@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 
-const INDEXABLE_PATHS = ['', '/about', '/contact', '/texas/petrified-forest-park'] as const;
+const INDEXABLE_PATHS = ['', '/about', '/contact'] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return INDEXABLE_PATHS.map((path, index) => ({
