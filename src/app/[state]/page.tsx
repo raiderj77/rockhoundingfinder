@@ -64,7 +64,7 @@ function getRockhoundPreview(d: { name: string; state: string; city: string; ame
   if (amenityCount >= 2) {
     return `Rockhounding site in ${location} with ${d.amenities.slice(0, 2).join(' and ').toLowerCase()}.`;
   }
-  return `Public rockhounding site in ${location}. Open for collecting.`;
+  return `Mapped mineral record in ${location}. Verify ownership, access, and collecting rules before visiting.`;
 }
 
 export default async function StatePage({ params }: { params: Promise<{ state: string }> }) {
@@ -136,12 +136,9 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
       {/* State info */}
       <section style={{ background: 'var(--cream)', borderTop: '1px solid rgba(196,82,26,0.08)', padding: '4rem 1.5rem' }}>
         <div className="container" style={{ maxWidth: '760px' }}>
-          <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.8rem', color: 'var(--earth)', marginBottom: '1rem', letterSpacing: '0.04em' }}>ROCKHOUNDING IN {stateName.toUpperCase()}</h2>
-          <p style={{ lineHeight: 1.85, marginBottom: '1.1rem', color: '#445' }}>
-            {stateName} offers rockhounders a diverse geological landscape to explore. From ancient river gravels to exposed bedrock outcrops, the state has produced everything from common quartz varieties to rare regional specialties prized by collectors worldwide.
-          </p>
+          <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.8rem', color: 'var(--earth)', marginBottom: '1rem', letterSpacing: '0.04em' }}>MAPPED RECORDS IN {stateName.toUpperCase()}</h2>
           <p style={{ lineHeight: 1.85, color: '#445' }}>
-            Before collecting, always verify land ownership and any permit requirements. BLM land generally allows personal-use collecting, while state parks vary and national parks prohibit removal of any natural materials. Leave no trace and fill any excavation holes.
+            These legacy records are not current access recommendations. Before entering or collecting, verify ownership, the responsible land manager, active mining claims, closures, protected resources, and current rules. A map coordinate alone does not establish public access.
           </p>
         </div>
       </section>
