@@ -58,3 +58,11 @@ test('Googlebot can crawl pages to observe route-level noindex rules', () => {
   const robots = read('public/robots.txt');
   assert.match(robots, /User-agent:\s*Googlebot[\s\S]*?Allow:\s*\//i);
 });
+
+test('the Creator footer link is followed only on the homepage', () => {
+  const layout = read('src/app/layout.tsx');
+  const creatorLink = read('src/components/CreatorRevenueLink.tsx');
+
+  assert.match(layout, /s\.href === 'https:\/\/creatorrevenuecalculator\.com'/);
+  assert.match(creatorLink, /pathname === '\/' \? 'noopener noreferrer' : 'nofollow noopener noreferrer'/);
+});
