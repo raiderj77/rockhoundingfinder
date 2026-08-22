@@ -59,10 +59,12 @@ test('Googlebot can crawl pages to observe route-level noindex rules', () => {
   assert.match(robots, /User-agent:\s*Googlebot[\s\S]*?Allow:\s*\//i);
 });
 
-test('the Creator footer link is followed only on the homepage', () => {
+test('the footer omits Creator Revenue Calculator and retains unrelated tools', () => {
   const layout = read('src/app/layout.tsx');
-  const creatorLink = read('src/components/CreatorRevenueLink.tsx');
 
-  assert.match(layout, /s\.href === 'https:\/\/creatorrevenuecalculator\.com'/);
-  assert.match(creatorLink, /pathname === '\/' \? 'noopener noreferrer' : 'nofollow noopener noreferrer'/);
+  assert.doesNotMatch(layout, /creatorrevenuecalculator\.com/i);
+  assert.doesNotMatch(layout, /Creator Revenue Calculator/i);
+  assert.match(layout, /href: 'https:\/\/fibertools\.app'/);
+  assert.match(layout, /href: 'https:\/\/mindchecktools\.com'/);
+  assert.equal(existsSync(new URL('../src/components/CreatorRevenueLink.tsx', import.meta.url)), false);
 });
