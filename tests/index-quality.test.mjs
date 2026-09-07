@@ -59,12 +59,16 @@ test('Googlebot can crawl pages to observe route-level noindex rules', () => {
   assert.match(robots, /User-agent:\s*Googlebot[\s\S]*?Allow:\s*\//i);
 });
 
-test('the footer omits Creator Revenue Calculator and retains unrelated tools', () => {
+test('the footer omits portfolio links', () => {
   const layout = read('src/app/layout.tsx');
 
   assert.doesNotMatch(layout, /creatorrevenuecalculator\.com/i);
   assert.doesNotMatch(layout, /Creator Revenue Calculator/i);
-  assert.match(layout, /href: 'https:\/\/fibertools\.app'/);
-  assert.match(layout, /href: 'https:\/\/mindchecktools\.com'/);
+  assert.doesNotMatch(layout, /href: 'https:\/\/flipmycase\.com'/);
+  assert.doesNotMatch(layout, /href: 'https:\/\/mindchecktools\.com'/);
   assert.equal(existsSync(new URL('../src/components/CreatorRevenueLink.tsx', import.meta.url)), false);
+});
+
+test('the footer does not publish a FiberTools cross-site link', () => {
+  assert.doesNotMatch(read('src/app/layout.tsx'), /https:\/\/(?:www\.)?fibertools\.app/i);
 });
