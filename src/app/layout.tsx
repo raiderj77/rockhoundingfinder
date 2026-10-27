@@ -5,7 +5,7 @@ const oswald = Oswald({ subsets: ['latin'], variable: '--font-display', display:
 const sourceSans = Source_Sans_3({ subsets: ['latin'], variable: '--font-body', display: 'swap', weight: ['400','600','700'] });
 export const metadata: Metadata = {
   title: { template: '%s | Rockhounding Finder', default: 'Rockhounding Finder ,  Find Rock & Mineral Sites Across America' },
-  description: 'Discover the best rockhounding sites across the United States. Find gems, minerals, fossils, and crystals with GPS coordinates and site details.',
+  description: 'Rockhounding Finder is reviewing mapped mineral records. A record does not prove public access or collecting permission. Verify current rules with the land manager.',
   keywords: 'rockhounding, gem hunting, mineral collecting, fossil sites, crystal hunting, rockhounding near me',
   metadataBase: new URL('https://rockhoundingfinder.com'),
   alternates: { canonical: 'https://rockhoundingfinder.com' },
@@ -32,7 +32,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </a>
             <nav className="site-nav" style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
               <a href="/" style={{ color: 'var(--rust-pale)', fontSize: '0.88rem', fontWeight: 600, textDecoration: 'none', fontFamily: 'var(--font-body)', letterSpacing: '0.04em' }}>Home</a>
-              <a href="/browse-states" style={{ color: 'var(--rust-pale)', fontSize: '0.88rem', fontWeight: 600, textDecoration: 'none', fontFamily: 'var(--font-body)', letterSpacing: '0.04em' }}>Browse</a>
               <a href="/about" style={{ color: 'var(--rust-pale)', fontSize: '0.88rem', fontWeight: 600, textDecoration: 'none', fontFamily: 'var(--font-body)', letterSpacing: '0.04em' }}>About</a>
             </nav>
           </div>
@@ -43,7 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem', marginBottom: '2.5rem' }}>
               <div>
                 <p style={{ fontFamily: 'var(--font-display)', color: 'var(--rust-lt)', fontWeight: 600, fontSize: '1.15rem', letterSpacing: '0.05em', marginBottom: '0.75rem' }}>🪨 ROCKHOUNDING FINDER</p>
-                <p style={{ color: '#8a6a5a', fontSize: '0.875rem', lineHeight: 1.7 }}>Free directory of rockhounding sites, gem hunting locations, and mineral collecting spots across the United States.</p>
+                <p style={{ color: '#8a6a5a', fontSize: '0.875rem', lineHeight: 1.7 }}>We are reviewing mapped mineral records across the United States. A record does not prove public access or collecting permission. Verify current rules with the responsible land manager.</p>
               </div>
             </div>
             <div style={{ borderTop: '1px solid rgba(255,255,255,0.07)', paddingTop: '1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>

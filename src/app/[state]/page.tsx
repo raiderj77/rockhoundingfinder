@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const stateName = getStateName(state);
   return {
     title: `Rockhounding Sites in ${stateName}`,
-    description: `Find the best rockhounding sites in ${stateName}. Gems, minerals, crystals, agates, and fossils with GPS coordinates and collecting tips.`,
+    description: `Mapped mineral records in ${stateName}. Verify ownership, the land manager, active mining claims, and current rules before visiting.`,
     alternates: { canonical: `https://rockhoundingfinder.com/${state}` },
     robots: { index: false, follow: true, googleBot: { index: false, follow: true } },
   };

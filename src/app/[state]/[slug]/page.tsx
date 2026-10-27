@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const loc = locations.find((l) => l.slug === slug);
   if (!loc) return {};
   return {
-    title: `${loc.name} ,  Rockhounding Site in ${loc.state}`,
+    title: `${loc.name} — Rockhounding Record in ${loc.state}`,
     description: `${loc.description.slice(0, 155)}`,
     alternates: { canonical: `https://rockhoundingfinder.com/${loc.stateSlug}/${loc.slug}` },
     robots: { index: false, follow: true, googleBot: { index: false, follow: true } },
