@@ -45,8 +45,7 @@ export default function PrivacyPage() {
           type, pages visited, and time spent on our site.
         </li>
         <li>
-          <strong>Optional tracking:</strong> Google AdSense, Google Analytics,
-          and Microsoft Clarity are not currently enabled.
+          <strong>Optional tracking:</strong> Google Analytics is used only after you accept via the consent control on this site (see the Cookies, Analytics, and Advertising section). Google AdSense and Microsoft Clarity are not enabled.
         </li>
       </ul>
 
@@ -67,13 +66,10 @@ export default function PrivacyPage() {
         Cookies, Analytics, and Advertising
       </h2>
       <p style={{ lineHeight: "1.8" }}>
-        The Site does not currently load advertising or optional analytics
-        scripts and does not set their cookies. A publisher identifier may remain
-        in ads.txt or public metadata solely for ownership verification.
+        Optional analytics: We use Google Analytics (GA4) only after you accept via the consent control shown on this site. Google Analytics does not load, and sets no cookies, until you accept. If you decline or have not chosen, it never loads. When it runs, it collects standard page-view and usage data (pages visited, approximate location, device and browser information) so we can see which pages are useful. Advertising features, ad personalization, and Google signals are off. You can change or withdraw your choice at any time using the Privacy choices control shown on every page; withdrawing stops further collection and clears the analytics cookies we are able to clear. Global Privacy Control and Do Not Track signals are treated as a decline. Microsoft Clarity and advertising trackers are not used.
       </p>
       <p style={{ lineHeight: "1.8", marginTop: "1rem" }}>
-        If these services are enabled later, we will update this policy and add
-        any consent and opt-out controls required before activation.
+        A publisher identifier may remain in ads.txt or public metadata solely for ownership verification. Google AdSense and Microsoft Clarity are not enabled, and no advertising cookies are set.
       </p>
 
       <h2 style={{ color: brandColor, marginTop: "2rem" }}>
